@@ -1,0 +1,77 @@
+\section{Device Maps}
+Device map files provide mapping between ``natural'' element names (such as ``FIRE'', ``TRIGGER'', ``X'', etc...) and the numeric ID of the device item inside Linux kernel. This is just provided so, when writing a game profile, instead of using a confusing bunch of numerical IDs such as 0, 1, etc... to refer to buttons and axes, we can use a more easier to remember element names, thus driving to a more readable game profile format.
+
+Listing ~\ref{lst:jsmapper_usermanual_sample_device_map} displays a device map file, specifically, the one for Saitek X-45 device.
+\begin{lstlisting}[language=XML,caption={Saitek X-45 Device Map file},label={lst:jsmapper_usermanual_sample_device_map}]
+<?xml version="1.0"?>
+<device name="Saitek X45 Flight Control Stick">
+	<button id="0" name="TRIGGER" />
+	<button id="1" name="A" />
+	<button id="2" name="B" />
+	<button id="3" name="FIRE" />
+	<button id="4" name="D" />
+	<button id="5" name="MOUSE_CLICK" />
+	<button id="6" name="SHIFT" />
+	<button id="7" name="C" />
+
+	<button id="8" name="MODE_1" />
+	<button id="9" name="MODE_2" />
+	<button id="10" name="MODE_3" />
+
+	<button id="11" name="AUX_1" />
+	<button id="12" name="AUX_2" />
+	<button id="13" name="AUX_3" />
+
+	<button id="14" name="HAT1_UP" />
+	<button id="15" name="HAT1_RIGHT" />
+	<button id="16" name="HAT1_DOWN" />
+	<button id="17" name="HAT1_LEFT" />
+
+	<button id="18" name="HAT3_UP" />
+	<button id="19" name="HAT3_RIGHT" />
+	<button id="20" name="HAT3_DOWN" />
+	<button id="21" name="HAT3_LEFT" />
+
+	<button id="22" name="MOUSE_UP" />
+	<button id="23" name="MOUSE_RIGHT" />
+	<button id="24" name="MOUSE_DOWN" />
+	<button id="25" name="MOUSE_LEFT" />
+
+	<axis id="0" name="X" />
+	<axis id="1" name="Y" />
+	<axis id="2" name="ROTARY_1" />
+	<axis id="3" name="RUDDER" />
+	<axis id="4" name="THROTTLE" />
+	<axis id="5" name="ROTARY_2" />
+	<axis id="6" name="HAT2_X" />
+	<axis id="7" name="HAT2_Y" />
+</device>
+\end{lstlisting}
+
+As seen above, device map format is pretty straightforward: just a bunch of ``button'' and ``axis'' elements, each one defining both the internal, numerical, element ID and their assigned name.
+
+The device map also should feature a ``name'' attribute on the root element: this name SHOULD match the internal name of the device provided by Linux kernel: right now, the device map to use must be specified when loading a profile, but in a future this probably will be done automatically based one device name.
+
+\subsection{Creating a device map}
+This step is needed only if none of the predefined device map files under ``/usr/share/jsmapper/devices'' is suitable for your device. Listing ~\ref{lst:jsmapper_usermanual_create_device_map} show how to create a new device map file using the provided \emph{jsmapper-device} tool:
+\begin{lstlisting}[language=bash,caption={Creating a new device map file},label={lst:jsmapper_usermanual_create_device_map}]
+$ jsmapper-device -c <path-to-device-map.xml>
+\end{lstlisting}
+
+This will query the attached device to determine its name, number of buttons and axes, and will generate a bare device map file on the given output path. The program will try to determine an appropiate name for the elements found, for those it can't it will leave them with their numerical IDs.
+
+Once the initial device map is created, you can see how element names are mapped by invoking again the program, this time in ``live view'' mode. Listing ~\ref{lst:jsmapper_usermanual_view_device_map} shows how to do it:
+\begin{lstlisting}[language=bash,caption={Checking a device map file},label={lst:jsmapper_usermanual_view_device_map}]
+$ jsmapper-device -v <path-to-device-map.xml>
+\end{lstlisting}
+
+This will display all the device elements, their mapped names, and their current vaues. By operating device elements you can check the names assigned to them, then open the device map into an editor and change the mapped names as you detect which one is every element. The view will be refreshed automatically as you edit the device map or change device values.
+Once the device map for your device is done, you can start creating the game profile by using the element names in there.
+
+\subsection{Why device map files are needed?}
+Linux kernel input system features a number of meaningful constants to identify both buttons (BTN\_xxx) and axes on a device (ABS\_xxx). Unfortunately, device drivers (usually the generic HID driver, in fact) don't do a very good job at providing proper ID values for the elements detected on the device: either they report an unappropiate ID (such as ABS\_RUDDER for an axis which is clearly not the rudder...), a complete meaningless one (such as BTN\_TRIGGER\_HAPPY5, i.e.), or even a numeric value not mapped to any defined constant. So, having to rely on element names based on these identifiers was clearly not an option, as they would be hard for the end user to figure out the right element name in every case.
+
+Another possibility was to simply use a numeric index, corresponding to the position or the element inside the order in which they are reported by the device (0..numButtons - 1 for buttons, i.e.): however, having to rely on numeric values for every element wouldn't make the profile writing task easier that with kernel IDs.
+
+Thus the needed for a custom, XML file based mapping between device elements and ``names'', so the user is free to give every button and axis a meaningful name, then use it inside the profile to map actions to it.
+

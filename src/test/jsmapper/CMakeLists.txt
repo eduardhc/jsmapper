@@ -1,0 +1,10 @@
+# unit tests:
+add_subdirectory( action )
+add_subdirectory( axisaction )
+add_subdirectory( buttonaction )
+add_subdirectory( keyaction )
+add_subdirectory( macroaction )
+add_subdirectory( condition )
+add_subdirectory( keymap )
+add_subdirectory( mode )
+add_subdirectory( profile )

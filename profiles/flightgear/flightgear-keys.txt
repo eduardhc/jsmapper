@@ -1,0 +1,25 @@
+P: pause
+
+S: start engine
+{}: magneto switch actuator
+
+B: wheel brake
+shift+B: parking brake
+Ctrl+B: toggle speed brake
+
+][: extend / retract flaps
+Home/End: elevator trim down/up
+
+G/shift+G: gear up/down
+L: Nose/tail sheel steering...?
+
+Ctrl-V: cockpit view
+v/V: cycle views
+Shift+P: toggle 2D panel
+c: toogle 3D panel
+x/X: zoom in/out
+Ctrl+X: reset zoom
+
+HUD:
+H/Shift+H: HUD color/bright
+I/Shift+I: minimize / maximize HUD 

@@ -1,0 +1,52 @@
+-------------------------------------------------------------------------------
+
+Setup instructions for JSMapper
+
+Author: Eduard Huguet
+Last modified: 2013-05-12
+
+-----------------------------------------------------------------------------
+
+1.- Obtaining the source code
+
+Source code can be obtained either by downloading the released TAR file, or 
+either directly cloning from the Git source code repository at Assembla:
+
+    git clone https://git.assembla.com/jsmapper.git
+
+
+2.- Installing pre-requisites
+
+The following compile-time dependencies are needed to build the project:
+
+	- cmake
+	- C/C++ compiler
+	- distro-specific infrastructure needed to build 3rd party kernel modules
+	  (in some cases this means simply installed kernel headers, in others the 
+	  full kernel sources are needed)
+	- libxml2 development files
+	- libncurses development files 
+	- libudev development files
+	- gtest binary & development files
+
+ 
+ 3.- Compiling the project
+ 
+ JSMapper uses CMake for the whole build process, including building the kernel 
+ module that provides event filtering. Thus, the recommended way to build the 
+ project is to create an out-of-the-tree build folder, then initialize it by 
+ pointing to source code's "src" folder (where main CMakeLists.txt is located).
+ 
+ Example commands:
+ 
+   $ mkdir build 
+   $ cmake <path_to_jsmapper>/src 
+   $ make 
+   
+   
+ 
+ 
+  
+
+
+

@@ -1,0 +1,10 @@
+\chapter{User manual}\label{chap:usermanual}
+\section{Overview}
+Once the kernel module has been installed and loaded, it should attach itself to any game plugged into the system. To verify this, just check for the creation of a ``/dev/input/jsmapX'' node after device connection.
+
+Using JSMapper for the end user should be a pretty straightforward process:
+\begin{itemize}
+	\item First of all, you might need to create a \emph{device map} for your device. This is needed only if none of the provided ones adequately matches your device. 
+	\item Then, you must write a \emph{game profile}, this is, an XML file describing the game actions and how they are mapped to the device controls.
+	\item Finally, you must \emph{loading} the profile into the device
+\end{itemize}

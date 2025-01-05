@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<profile target="Saitek X45 Flight Control Stick" name="Test">
+  <description>A simple testing profile </description>
+  <actions>
+      <action name="Intro" filter="no" type="key" key="ENTER" >
+        <description>An simple action which presses ENTER key</description>
+      </action>
+      <action name="Single Up" filter="yes" type="key" key="A" >
+        <description>An action which sends an A key</description>
+      </action>
+      <action name="Single Down" filter="yes" type="key" key="B" single="yes">
+        <description>An action which sends a single B key</description>
+      </action>
+      <action name="Single Shift+Up" filter="yes" type="key" key="1" modifiers="LEFTSHIFT" >
+        <description>An action which sends a Shift+1 key</description>
+      </action>
+      <action name="Single Shift+Down" filter="yes" type="key" key="2" modifiers="LEFTSHIFT" single="yes">
+        <description>An action which sends a single Shift+2 key</description>
+      </action>
+      <action name="Up" filter="yes" type="key" key="UP" >
+        <description>Cursor up</description>
+      </action>
+      <action name="Down" filter="yes" type="key" key="DOWN" >
+        <description>Cursor down</description>
+      </action>
+      <action name="Left" filter="yes" type="key" key="LEFT" >
+        <description>Cursor left</description>
+      </action>
+      <action name="Right" filter="yes" type="key" key="RIGHT" >
+        <description>Cursor right</description>
+      </action>
+      <action name="ABC" filter="yes" type="macro" spacing="100" >
+        <description>Presses a-B-c</description>
+        <keys>
+            <key key="A" />
+            <key key="B" modifiers="LEFTSHIFT" />
+            <key key="C" />
+        </keys>
+      </action>
+  </actions>
+  <mode name="Root">
+    <description>The root mode</description>
+	<button id="TRIGGER" action="Intro" />
+	<button id="A" action="Single Up" />
+	<button id="B" action="Single Down" />
+	<axis	id="HAT2_X">
+	  <band low="-1" high="-1" action="Left" />
+	  <band low="1" high="1" action="Right" />
+	</axis>
+	<axis	id="HAT2_Y">
+	  <band low="-1" high="-1" action="Down" />
+	  <band low="1" high="1" action="Up" />
+	</axis>
+    <mode name="Child">
+      <description>A submode which gets activated when button 3 is held down</description>
+      <condition type="button" id="SHIFT"/>
+      <button id="TRIGGER" action="ABC" />
+	  <button id="A" action="Single Shift+Up" />
+	  <button id="B" action="Single Shift+Down" />
+    </mode>
+  </mode>
+</profile>

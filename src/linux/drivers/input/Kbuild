@@ -1,0 +1,2 @@
+obj-m += jsmapperdev.o
+jsmapperdev-objs := jsmapper_main.o jsmapper_core.o jsmapper_evgen.o

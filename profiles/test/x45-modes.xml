@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<profile target="Saitek X45 Flight Control Stick" name="Test">
+	<description>A simple testing profile </description>
+	<actions>
+		<action name="A" type="key" key="A" />
+		<action name="B" type="key" key="B" />
+		<action name="Shift_A" type="key" key="A" modifiers="LEFTSHIFT" />
+		<action name="Shift_B" type="key" key="B" modifiers="LEFTSHIFT" />
+		
+		<action name="0" type="key" key="0" />
+		<action name="1" type="key" key="1" />
+		<action name="2" type="key" key="2" />
+		<action name="3" type="key" key="3" />
+		<action name="Shift_1" type="key" key="1" modifiers="LEFTSHIFT" />
+		<action name="Shift_2" type="key" key="2" modifiers="LEFTSHIFT" />
+		<action name="Shift_3" type="key" key="3" modifiers="LEFTSHIFT" />
+	</actions>
+	
+	<mode name="Root">
+    
+		<description>The root mode</description>
+		
+		<!-- Root mode assignments --> 
+		<button id="A" action="A" />
+		<button id="B" action="B" />
+		
+		<!-- Common shift state for all modes --> 
+		<mode name="Root_Shift">
+			<condition type="button" id="SHIFT"/>
+			<button id="A" action="Shift_A" />
+			<button id="B" action="Shift_B" />
+			
+			<!-- never gets executed, as gets overridden by all subsequent definitions -->
+			<button id="TRIGGER" action="0" />
+		</mode>
+		
+		<!-- Mode 1 mode + plus shift state -->
+		<mode name="Mode_1">
+			<condition type="button" id="MODE_1"/>
+			<button id="TRIGGER" action="1" />
+			
+			<mode name="Mode_1_Shift">
+				<condition type="button" id="SHIFT"/>
+				<button id="TRIGGER" action="Shift_1" />
+			</mode>
+		</mode>
+		
+		<!-- Mode 2 mode + plus shift state -->
+		<mode name="Mode_2">
+			<condition type="button" id="MODE_2"/>
+			<button id="TRIGGER" action="2" />
+			
+			<mode name="Mode_2_Shift">
+				<condition type="button" id="SHIFT"/>
+				<button id="TRIGGER" action="Shift_2" />
+			</mode>
+		</mode>
+		
+		<!-- Mode 3 mode + plus shift state -->
+		<mode name="Mode_3">
+			<condition type="button" id="MODE_3"/>
+			<button id="TRIGGER" action="3" />
+			
+			<mode name="Mode_3_Shift">
+				<condition type="button" id="SHIFT"/>
+				<button id="TRIGGER" action="Shift_3" />
+			</mode>
+		</mode>
+  
+	</mode>
+	
+</profile>

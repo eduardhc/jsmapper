@@ -1,0 +1,387 @@
+\section{Creating a Profile}
+
+\subsection{Game profiles}
+A game profile is simply an XML file containing a list of \emph{actions}, which can be simple key presses, mouse movements, complex macros, etc..., and a list of \emph{mode} definitions, which map actions against available buttons and axis on the device.  
+
+The basic structure of a game profile file is as follows:
+\begin{itemize}
+	\item a root \emph{``profile''} node. It might include a \emph{``name''} attribute, just for reference.
+	\item an \emph{``actions''} sub-node, containing a list of \emph{``action''} elements. These are described in the Actions section.
+	\item a single \emph{``mode''} sub-node, containing the root mapping between device elements and actions. Sections \ref{chap:usermanual_mapping_buttons} ``Buttons'' and \ref{chap:usermanual_mapping_axes} ``Axes'' describe how these mappings are defined.
+\end{itemize}
+
+Listing \ref{lst:jsmapper_usermanual_sample_profile} displays an example of a very simple game profile, which maps the ENTER key to the FIRE button on the device:
+\begin{lstlisting}[language=XML,caption={Example profile},label={lst:jsmapper_usermanual_sample_profile}]
+<?xml version="1.0"?>
+<profile name="Test">
+	<description>A very simple profile </description>
+	<actions>
+		<action name="Intro" type="key" key="ENTER" >
+			<description>
+				An simple action which presses ENTER key
+			</description>
+		</action>
+	</actions>  
+	<mode name="Root">
+		<description>The root mode</description>
+		<button id="FIRE" action="Intro" />
+	</mode>
+</profile>
+\end{lstlisting}
+
+The \emph{``description''} elements are optional, and merely for informative purposes (they are not loaded into the device).
+
+
+\subsection{Creating actions}
+Actions are defined by \emph{``action''} items inside the \emph{``actions''} element of the root \emph{``profile''} element, with the following attributes:
+\begin{itemize}
+	\item a mandatory \emph{``name''} attribute, which is later used when mapping the action to either a button or an axis band.
+	\item a mandatory \emph{``type''} attribute, which specified the type of action (see below).
+	\item an optional \emph{``filter''} attribute, which specifies if original device source event is filtered out after launching the action, or else is allowed to continue its way to target application (default is true).
+	\item an optional \emph{``description''} sub-element, containing a textual description of the action, which is only for informational purposes.
+\end{itemize}
+
+Currently, there are 5 types of actions supported:
+\begin{itemize}
+	\item \emph{keystroke} actions
+	\item \emph{button} actions
+	\item \emph{axis} actions
+	\item \emph{macro} actions
+	\item \emph{null} actions
+\end{itemize}
+
+\subsubsection{Keystroke actions}
+Keystroke actions allows user to simulate a keystroke (either a single key, or a shortcut-like composed using a single key plus optional modifiers such as CTRL, ALT,...) being pressed on the keyboard. A keystroke action definition should include the following elements:
+\begin{itemize}
+	\item a \emph{``type''} attribute with \emph{``key''} value element
+	\item a mandatory \emph{``key''} attribute, specifying the key to send (see section \ref{chap:usermanual_elem_names} ``Element names'' for supported key names)
+	\item an optional \emph{``modifiers''} attribute, defining the possible key modifiers to use  such as SHIFT, CTRL, ... (to specify multiple modifiers, use ``;'' 	between them)
+	\item an optional \emph{``single''} attribute, defining if the action should hold down the key as long as the button is pressed or else release it immediately (default is false)
+\end{itemize}
+
+\paragraph{Example}
+Listing \ref{lst:jsmapper_usermanual_sample_keystroke_action} displays an example of some keystroke actions: \begin{lstlisting}[language=XML,caption={Sample keystroke actions},label={lst:jsmapper_usermanual_sample_keystroke_action}]
+<actions>
+	<action name="Intro" type="key" 
+					key="ENTER" />
+	<action name="Spc" type="key" single="true" 
+					key="SPACE" />
+	<action name="FileOpen" type=key" single="true" 
+					key="O" modifiers="LEFTCTRL;LEFTALT" />
+</actions>  
+\end{lstlisting}
+
+\paragraph{How they work}
+Keyboard-based actions behaves differently depending on the value of the (optional) ``single'' attribute:
+\begin{itemize}
+	\item if \emph{single=``false''} (default), then a ``key press'' event for the key (and, previously, for the optional modifiers, if any) is sent whenever the target button is pressed (if the action is mapped to a button), or else the axis value enters the target ``band'' (see section \ref{chap:usermanual_mapping_axes}). Then, a ``key release'' will be sent when the button is released or axis band exited. This will result on the key being self-repeating as long as the button is held down, i.e., just like if a regular key on your keyboard os held down.
+	\item if \emph{single=``true''}, then a single pair key press and release events will be sent whenever the button is pressed down or axis band entered, and no action will be taken on button release or axis band exit.
+\end{itemize}
+
+
+\subsubsection{Button actions}
+Button actions are used to simulate mouse button events. In fact, they are fairly similar to keystroke actions, only difference being the XML tag used to define the action. 
+A button action definition should include the following elements:
+\begin{itemize}
+	\item a \emph{``type''} attribute with \emph{``button''} value element
+	\item a mandatory \emph{``button''} attribute, specifying the button to send (see section \ref{chap:usermanual_elem_names} ``Element names'' for supported button names)
+	\item an optional \emph{``modifiers''} attribute, defining a possible key modifiers such as CTRL and SHIFT to use (to specify multiple modifiers, use ``;'' between them)
+	\item an optional \emph{``single''} attribute, defining if the action should hold the button down, or else release it immediately (thus generating an immediate click)
+\end{itemize}
+
+\paragraph{Example}
+Listing \ref{lst:jsmapper_usermanual_sample_button_action} displays an example of a button action: 
+\begin{lstlisting}[language=XML,caption={Sample button action},label={lst:jsmapper_usermanual_sample_button_action}]
+<actions>
+	<action name="MouseLeft" type="button" key="LEFT" />
+</actions>  
+\end{lstlisting}
+
+
+\subsubsection{Axis actions}
+Axis actions are used to simulate axis movement events. Right now, only relative axes are supported (which are the ones used by mouse, i.e.). 
+An axis action definition should include the following elements:
+\begin{itemize}
+	\item a \emph{``type''} attribute with \emph{``axis''} value element
+	\item a mandatory \emph{``axis''} attribute, specifying the button to send (see section \ref{chap:usermanual_elem_names} ``Element names'' for supported axis names)
+	\item an optional \emph{``step''} attribute, specifying the number of axes units used by every step (default is 1)
+	\item an optional \emph{``single''} attribute, defining if the axis should keep moving as long as the button is pressed (default is true)
+	\item an optional \emph{``spacing''} attribute, defining how many milliseconds to wait between steps (default is 100 ms)
+\end{itemize}
+
+\paragraph{Example}
+Listing \ref{lst:jsmapper_usermanual_sample_axis_action} displays an example of some possible axis actions: 
+\begin{lstlisting}[language=XML,caption={Sample axis actions},label={lst:jsmapper_usermanual_sample_axis_action}]
+<actions>
+	<action name="MouseLeft" type="axis" 
+					axis="X" step="-1" spacing="5" />
+	<action name="MouseRight" type="axis" 
+					axis="X" step="1" spacing="5" />
+	<action name="MouseUp" type="axis" 
+					axis="Y" step="-1" spacing="5" />
+	<action name="MouseDown" type="axis" 
+					axis="Y" step="1" spacing="5" />
+</actions>  
+\end{lstlisting}
+
+\paragraph{How they work}
+For axis actions for which \emph{``single''} attribute is false, a driver thread will be generating axis movement events for as long as the source button is held down. Every event will contain the number of steps defined in the action, and they will be spaced by the specified amount of time in ms.
+
+For single-type axis actions, only one movement step will be generated.
+
+
+\subsubsection{Macro actions}
+Macros are simply a fixed, time-spaced sequence of keys to be sent that can get assigned to either a button or an axis band. They are intended to be used to automate a series of steps by sending a bunch of key events to the game.
+
+In order to define a ``macro'' type action, the following elements should be included:
+\begin{itemize}
+	\item a \emph{``type''} attribute with \emph{``macro''} value
+	\item a \emph{``keys''} element, containing itself the key sequence to launch, each one as a \emph{``key''} element inside it.
+	\item an optional \emph{``spacing''} attribute, defining the number of milliseconds to wait between generated key presses (default is 250 ms).
+\end{itemize}
+
+\paragraph{Example}
+Listing \ref{lst:jsmapper_usermanual_sample_macro_action} displays an example of a macro action which attempts to open an hypothetical ``File'' menu (which could be opened using \emph{ALT-F} shortcut) featuring a ``Print'' command, accessible through the ``P'' shortcut once the menu is opened: 
+\begin{lstlisting}[language=XML,caption={Sample macro action},label={lst:jsmapper_usermanual_sample_macro_action}]
+<actions>
+	<action name="Macro" type="macro" spacing="100" >
+		<description>Invokes File menu, Print command</description>
+		<keys>
+			<key key="F" modifiers="LEFTALT" />
+			<key key="P" />
+		</keys>
+	</action>
+</actions>
+\end{lstlisting}
+
+
+\paragraph{How they work}
+Macros are launched whenever the target element is activated, meaning by that the button is pressed (for a button), or the axis enters the assigned band range (in case of an axis band). This means that, for every key defined, a couple of key press and release events will be generated, then the driver will wait for the specified amount of time before continuing with the next key defined in the sequence.
+
+It's important to note that macros are NOT cancellable (by releasing the button before they have finished, i.e.), nor they self-repeat automatically (i.e. by holding down the button.): every time the button is pressed, a single macro sequence will be launched.
+
+
+\subsubsection{Null actions}
+Null actions are an advanced feature, mostly used to ``hide'' device events to the target application by means of assigning them an empty action that does nothing, but filters out the original source event.
+
+Null actions are specified by using \emph{``none''} value for the \emph{``type''} attribute in action definition.
+
+\subsection{Mapping actions}
+Actions are mapped to device buttons and axes by including the appropiate clause into a \emph{``mode''} declaration, as explained in the sections below.
+
+\subsubsection{Buttons}\label{chap:usermanual_mapping_buttons}
+In order to map an action to a button, a \emph{``button''} node is included inside a mode declaration. The node must include the following elements:
+\begin{itemize}
+	\item an \emph{``id''} attribute specifying the name of the button this mapping applies to, as defined in the target device's map file.
+	\item an \emph{``action''} attribute, specifying the name of the action to launch whenever the button is operated. The given name should match one of the action's name define on the \emph{``actions''} part of the profile.
+\end{itemize}
+
+\paragraph{Example}
+Listing \ref{lst:jsmapper_usermanual_map_button} displays an example of a game profile mapping some keyboard actions to buttons on the device:
+\begin{lstlisting}[language=XML,caption={Mapping buttons},label={lst:jsmapper_usermanual_map_button}]
+<?xml version="1.0"?>
+<profile name="Test">
+	<description>A very simple profile </description>
+	<actions>
+		<action name="Intro" type="key" 
+						key="ENTER" />
+		<action name="Spc" type="key" 
+						single="true" key="SPACE" />
+		<action name="FileOpen" type=key" 
+						single="true" key="O" 
+						modifiers="LEFTCTRL;LEFTALT" />
+		</actions>  
+	<mode name="Root">
+		<description>The root mode</description>
+		<button id="TRIGGER" action="Intro" />
+		<button id="FIRE" action="Spc" />
+		<button id="A" action="FileOpen" />
+	</mode>
+</profile>
+\end{lstlisting}
+
+\subsubsection{Axes}\label{chap:usermanual_mapping_axes}
+Actions can also be mapped to axis present in the device, by defining \emph{``bands''} on them, then assigning different actions to each one of the bands created.
+
+Axis mappings are defined by including an \emph{``axis''} element inside a mode declaration, and including the following elements:
+\begin{itemize}
+	\item an \emph{``id''} attribute specifying the name of the button this mapping applies to, as defined in the target device's map file.
+	\item a number of children \emph{``band''} elements, each one featuring an \emph{``action''} attribute specifying an action, plus a \emph{``low''} and \emph{``high''} value attributes defining the axis band value range.
+\end{itemize}
+
+\paragraph{How they work}
+Defining band ranges on an axis is equivalent to defining ``virtual'' buttons on it, so actions can be mapped to them in a similar way to that of normal buttons on the device. 
+
+This is:
+\begin{itemize}
+	\item moving axis position into the band is equivalent to ``pressing'' the button
+	\item moving axis position outside the band, is thus, equivalent to ``releasing'' the button
+\end{itemize}
+
+This means that, i.e., a keystroke action is mapped to an axis band, the assigned key will get ``pressed'' when axis position is moved into this band, then will self-repeat as long as the axis is left there, and wil get ``released'' when axis exits the band. 
+
+It's also possible to leave some value bands unassigned. In such a case, no action will be taken whenever axis position is inside the band.
+
+\paragraph{Example}
+Listing \ref{lst:jsmapper_usermanual_map_axis} displays an example of a game profile mapping some actions to device axes:
+\begin{lstlisting}[language=XML,caption={Mapping axes},label={lst:jsmapper_usermanual_map_axis}]
+<?xml version="1.0"?>
+<profile name="Test">
+	<description>
+		A simple profile mapping cursor keys to X-45's HAT2 axes
+	</description>
+	<actions>
+		<action name="Up" type="key" key="UP" />
+		<action name="Down" type="key" key="DOWN" />
+		<action name="Left" type="key" key="LEFT" />
+		<action name="Right" type="key" key="RIGHT" />
+	</actions>
+		<mode name="Root">
+		<description>The root mode</description>
+		<axis id="HAT2_X">
+			<band low="-1" high="-1" action="Left" />
+			<band low="1" high="1" action="Right" />
+			</axis>
+		<axis id="HAT2_Y">
+			<band low="-1" high="-1" action="Down" />
+			<band low="1" high="1" action="Up" />
+		</axis>
+	</mode>
+</profile>
+\end{lstlisting}
+
+In this example, four actions are defined to represent cursor keys, then mapped to bands on \emph{HAT2\_X} and \emph{HAT2\_Y} axes, which are the two axes a Saitek X-45 device returns for the second HAT-style button it features on top of the stick (the other one, by contrary, is represented by 4 regular buttons). 
+Both axes offer only 3 possible values (-1, 0, 1), being ``0'' the value returned in repose mode. With the mapping above, the HAT2 will behave as a regular pad, moving cursor along the four directions.
+
+
+\subsection{Modes}
+A \emph{``mode''} is simply a mapping between joystick controls and the action to perform for them when invoked. As seen in the past examples, every profile has one, and only one, \emph{root mode}, containing the base assignments for the profile.
+
+In order to add new modes, they must be created as \emph{children} of the root mode, and must also feature an \emph{activation condition} that will determine when the submode is active.
+
+\paragraph{Example}
+Listing \ref{lst:jsmapper_usermanual_sample_mode} displays an example of a game profile mapping some actions to device axes:
+\begin{lstlisting}[language=XML,caption={Modes},label={lst:jsmapper_usermanual_sample_mode}]
+<?xml version="1.0"?>
+<profile name="Test">
+	<description>
+		A simple testing profile
+	</description>
+	<actions>
+		<action name="Intro" type="key" key="ENTER" />
+		<action name="Spc" type="key" key="SPACE" />
+	</actions>
+	<mode name="Root">
+		<description>The root mode</description>
+		<button id="FIRE" action="Intro" />
+		<mode name="Shift">
+			<condition type="button" id="SHIFT"/>
+			<button id="FIRE" action="Spc" />
+		</mode>
+	</mode>
+</profile>
+\end{lstlisting}
+
+In this example, two simple actions are created, one triggering an ENTER key (\emph{``Intro''}) and the other one the SPACE key (\emph{``Spc''}). In root mode, FIRE button is mapped to \emph{``Intro''} action. Then, a child mode is created, which gets activated using the SHIFT button: in it, FIRE button is overriden, by assigning it the \emph{``Spc''} action instead of \emph{``Intro''}.
+
+\paragraph{How they work}
+As seen on the example, new modes get defined simply by adding a nested \emph{``mode''} element inside another one, usually under the root one (which is mandatory). Contrary to root mode, however, any child mode must feature a \emph{``condition''} element, which describes the activation condition for such a mode. 
+
+Right now, only button-type condition is supported, which means that the mode will be active if the given button (by mean of the \emph{``id''} attribute) is held down. Section \emph{\ref{section:mode_activation} ``Mode activation''} below for more information about how mode selection works at runtime.
+
+A \emph{child} mode can either add new mappings to the profile, or either override parent's one with its own assignments. Any element not assigned by a child mode will simply inherit the assignment made in its parent mode.
+
+\paragraph{Mode activation}\label{section:mode_activation}
+At runtime, whenever any button or axis on the device is operated, the module tries to determine which is the correct mode to apply by checking their associated activation conditions and the current state of the device. 
+
+In order to do so, it starts from the root mode, and checks if any of its children modes is active by checking its activation conditions. If so, then it repeats the process recursively, starting from the child mode.
+
+Listing \ref{lst:jsmapper_usermanual_sample_submodes} displays an example of a multi-mode profile, featuring a root mode and 3 submodes, every one of which features also a ``shift state'' submode on its own:
+\begin{lstlisting}[language=XML,caption={Modes and submodes},label={lst:jsmapper_usermanual_sample_submodes}]
+<?xml version="1.0"?>
+<profile target="Saitek X45 Flight Control Stick" 
+				 name="Test">
+	<description>A simple testing profile </description>
+	<actions>
+		<action name="A" type="key" key="A" />
+		<action name="B" type="key" key="B" />
+		<action name="1" type="key" key="1" />
+		<action name="2" type="key" key="2" />
+		<action name="3" type="key" key="3" />
+		<action name="Shift_1" type="key" key="1" 
+						modifiers="LEFTSHIFT" />
+		<action name="Shift_2" type="key" key="2" 
+						modifiers="LEFTSHIFT" />
+		<action name="Shift_3" type="key" key="3" 
+						modifiers="LEFTSHIFT" />
+	</actions>
+	<mode name="Root">
+		<description>The root mode</description>
+			<button id="A" action="A" />
+			<button id="B" action="B" />
+			<mode name="Mode_1">
+				<condition type="button" id="MODE_1"/>
+				<button id="TRIGGER" action="1" />
+					<mode name="Mode_1_Shift">
+						<condition type="button" id="SHIFT"/>
+						<button id="TRIGGER" action="Shift_1" />
+					</mode>
+			</mode>
+			<mode name="Mode_2">
+				<condition type="button" id="MODE_2"/>
+				<button id="TRIGGER" action="2" />
+				<mode name="Mode_2_Shift">
+					<condition type="button" id="SHIFT"/>
+					<button id="TRIGGER" action="Shift_2" />
+				</mode>
+			</mode>
+			<mode name="Mode_3">
+				<condition type="button" id="MODE_3"/>
+				<button id="TRIGGER" action="3" />
+				<mode name="Mode_3_Shift">
+					<condition type="button" id="SHIFT"/>
+					<button id="TRIGGER" action="Shift_3" />
+				</mode>
+			</mode>
+	</mode>
+</profile>
+\end{lstlisting}
+
+As seen above, the root mode contains 3 submodes, each of one is activated through the corresponding positions of the \emph{MODE} switch on the device (which gets translated to 3 separate buttons, internally). Each of these, additionally, features a submode, which gets activated through the \emph{SHIFT} button, which overrides the assignments made in parent mode.
+
+The last part if is the most interesting part of this example, as it shows how a single activation button (\emph{SHIFT}) can be used for 3 different submodes, as mode selection algorithm will consider it only after having reached first the corresponding parent mode, depending on \emph{MODE} switch button state.
+
+\subsection{Element names}\label{chap:usermanual_elem_names}
+As JSMapper mapping works at kernel level, keys, buttons, etc... are referred by the identifiers used at kernel level, specifically the \emph{KEY\_xxx}, \emph{BTN\_xxx}, \emph{REL\_xxx} constants defined in \emph{<linux/input.h>} file (without the prefix). In order to make profile writing easier, the whole list of supported valid item names can be obtained using \emph{jsmapper-ctrl} tool.
+
+Example \ref{lst:jsmapper_usermanual_keys} shows how to use \emph{jsmapper-ctrl} to display the list of supported target key names:
+\begin{lstlisting}[language=bash,caption={Obtaining target key names},label={lst:jsmapper_usermanual_keys}]
+$ jsmapper-ctrl --keys
+\end{lstlisting}
+
+Example \ref{lst:jsmapper_usermanual_buttons} shows how to use \emph{jsmapper-ctrl} to display the list of supported target button names:
+\begin{lstlisting}[language=bash,caption={Obtaining target button names},label={lst:jsmapper_usermanual_buttons}]
+$ jsmapper-ctrl --buttons
+\end{lstlisting}
+
+Example \ref{lst:jsmapper_usermanual_axes} shows how to use \emph{jsmapper-ctrl} to display the list of supported target axis names:
+\begin{lstlisting}[language=bash,caption={Obtaining target axis names},label={lst:jsmapper_usermanual_axes}]
+$ jsmapper-ctrl --axes
+\end{lstlisting}
+
+ 
+\paragraph{Determining key symbols}
+When using keyboard layouts other than the standard ``US'' layout, getting to know which is the right symbol for a given key can be a little tricky, as the ``real'' hardware key identifier might not match which is printed on it.
+
+The right symbol to use can be determined by using the ``evtest'' input helper tool, like seen in example \ref{lst:jsmapper_usermanual_evtest}:
+\begin{lstlisting}[language=bash,caption={Getting key names},label={lst:jsmapper_usermanual_evtest}]
+$ evtest /dev/input/event0
+...
+Event: time 1349944227.260230, type 1 (Key), code 43 (BackSlash), value 0
+...
+\end{lstlisting}
+
+This will dump keys pressed on the terminal: the symbol name to use is the one enclosed between parenthesis right after ``code'' value (``BackSlash'', in this case). The symbol displayed MUST be converted to upper case, as \emph{JSMapper} uses uppercase names for keys (so, ``BACKSLASH'' is the right name to use in the profile).
+
+\textit{Note: the right \emph{/dev/input/eventX} device to use can be different among systems. If there is more than one ``eventX'' element present, then try each one until you get some output when pressing keyboard keys.}
+

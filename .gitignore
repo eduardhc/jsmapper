@@ -1,0 +1,27 @@
+*.cmd
+*.o
+*.ko
+*.mod.*
+*~
+.tmp_versions
+test/build/*
+Module.symvers
+modules.order
+
+# QtCreator:
+CMakeLists.txt.user
+
+# Documentation:
+doc/html
+doc/report/*.aux
+doc/report/**/*.pdf
+doc/report/*.bib
+doc/report/*.log
+doc/report/*.blg
+doc/report/*.dvi
+doc/report/*.tdo
+doc/report/*.toc
+
+# build folder
+build/
+*.mod

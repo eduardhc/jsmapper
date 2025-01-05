@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<profile target="Logitech Inc. WingMan Extreme Digital 3D" name="Test">
+	
+	<description>Testing profile for Logitech Wingman Extreme</description>
+
+	<!-- 
+		
+		Action list
+	
+	-->
+	
+	<actions>
+		<action name="None" type="none" />
+		
+		<action name="StartGEdit" type="macro" spacing="100" >
+			<description>Starts GEdit through command line</description>
+			<keys>
+				<key key="G" />
+				<key key="E" />
+				<key key="D" />
+				<key key="I" />
+				<key key="T" />
+				<key key="ENTER" />
+			</keys>
+		</action>
+		
+		<action name="ExitGEdit" type="macro" spacing="100" >
+			<description>Exits GEdit through menus</description>
+			<keys>
+				<key key="F" modifiers="LEFTALT" />
+				<key key="S" />
+			</keys>
+		</action>
+		
+		<action name="MouseLClick" type="button" button="LEFT" />	
+		<action name="MouseRClick" type="button" button="RIGHT" />	
+		
+		<action name="MouseLeft_Slow" type="axis" axis="X" step="-1" spacing="5" />
+		<action name="MouseRight_Slow" type="axis" axis="X" step="1" spacing="5"  />
+		<action name="MouseUp_Slow" type="axis" axis="Y" step="-1" spacing="5"  />
+		<action name="MouseDown_Slow" type="axis" axis="Y" step="1" spacing="5"  />
+		
+		<action name="MouseLeft_Norm" type="axis" axis="X" step="-2" spacing="5" />
+		<action name="MouseRight_Norm" type="axis" axis="X" step="2" spacing="5"  />
+		<action name="MouseUp_Norm" type="axis" axis="Y" step="-2" spacing="5"  />
+		<action name="MouseDown_Norm" type="axis" axis="Y" step="2" spacing="5"  />
+		
+		<action name="MouseLeft_Fast" type="axis" axis="X" step="-5" spacing="5" />
+		<action name="MouseRight_Fast" type="axis" axis="X" step="5" spacing="5"  />
+		<action name="MouseUp_Fast" type="axis" axis="Y" step="-5" spacing="5"  />
+		<action name="MouseDown_Fast" type="axis" axis="Y" step="5" spacing="5"  />
+		
+		<action name="DesktopLeft" type="key" key="LEFT" modifiers="LEFTALT;LEFTCTRL" />
+		<action name="DesktopRight" type="key" key="RIGHT" modifiers="LEFTALT;LEFTCTRL" />
+		<action name="DesktopUp" type="key" key="UP" modifiers="LEFTALT;LEFTCTRL" />
+		<action name="DesktopDown" type="key" key="DOWN" modifiers="LEFTALT;LEFTCTRL" />
+		
+	</actions>
+		
+
+	<!-- 
+		
+		Root modes
+	
+		Contains all base assignements. 
+	-->
+	
+	<mode name="ROOT">
+		<description>The root mode</description>
+		
+		<button id="TRIGGER" action="StartGEdit" />
+		
+		<button id="BTN_02" action="MouseRClick" />
+		<button id="BTN_03" action="MouseLClick" />
+		<axis id="X" >
+		  <band low="0" high="148" action="MouseLeft_Fast" />
+		  <band low="149" high="298" action="MouseLeft_Norm" />
+		  <band low="299" high="448" action="MouseLeft_Slow" />
+		  <band low="576" high="726" action="MouseRight_Slow" />
+		  <band low="727" high="876" action="MouseRight_Norm" />
+		  <band low="877" high="1023" action="MouseRight_Fast" />
+		</axis>
+		<axis id="Y" >
+		  <band low="0" high="148" action="MouseUp_Fast" />
+		  <band low="149" high="298" action="MouseUp_Norm" />
+		  <band low="299" high="448" action="MouseUp_Slow" />
+		  <band low="576" high="726" action="MouseDown_Slow" />
+		  <band low="727" high="876" action="MouseDown_Norm" />
+		  <band low="877" high="1023" action="MouseDown_Fast" />
+		</axis>
+
+
+		<axis id="HAT_X" >
+		  <band low="-1" high="-1" action="DesktopLeft" />
+		  <band low="1" high="1" action="DesktopRight" />
+		</axis>
+		<axis id="HAT_Y" >
+		  <band low="-1" high="-1" action="DesktopUp" />
+		  <band low="1" high="1" action="DesktopDown" />
+		</axis>
+		
+		<!--
+		
+			Basic shifted submode
+			
+		-->
+		
+		<mode name="Shift_07">
+			<condition type="button" id="BTN_07" />
+			
+			<button id="TRIGGER" action="ExitGEdit" />
+			
+		</mode>
+		
+	</mode>
+			
+</profile>
+

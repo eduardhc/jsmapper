@@ -1,0 +1,34 @@
+\chapter{Conclusions}\label{chap:conclusions}
+
+\section{Achievements}
+The original motivation behind this project was to bring to Linux OS some of the advanced features offered by joystick manufacturers for the Windows operating system, by means of the propietary drivers shipped along wth the product. In addition, the idea was to come with a very generic solution, not tighted to any particular device, so a large number of Linux users could benefit from it.
+
+I think that this objective has been succesfully achieved, as the solution offered satisfies all the conditions above. Moreover, the way the project is structured makes easy to add new features, complementary tools, etc... in the future, so there should be no need for large rewrites of the project codebase.
+
+A secondary, more personal objective was to get started with the basics of Linux kernel development, which I also consider to be a succesfully achieved objective: even if this project has dealt only with a very specific portion of the Linux kernel codebase (the input subsystem), it has allowed me to learn about how kernel modules are constructed, how they interact with the system and communicate with the outside, and how to deal at kernel level with low level programming aspects such as memory allocations, IRQ contexts, threads and work queues.
+
+
+\section{Future}
+
+\subsection{Improvements}
+Even as the basic objectives for the project has been succesfully achieved, there's still room for a lot of improvements and / or possible future developments:
+\begin{itemize}
+	\item \emph{GUI applet}: this would increase the usability of the project, as final users would not need to deal with the command line in order to load game profiles into the driver. The GUI frontend could be something as simple as an applet-type application displaying an icon on the desktop status bar, through which the user would select the profile to be loaded using a drop-down menu. Or else a more sophisticated application which would allow to, i.e., associate game profiles to game executables, the monitorize the system to automatically load the appropiate profile when the game executable is started.
+	\item \emph{GUI profile builder}: this would be a large GUI application, which would allow the user to interactively create a game profile by letting it enter keystrokes, associate actions with device controls, create modes, etc..., all from a confortable GUI. This would also dramatically improve the user-friendliness of the project, as the user would be abple to create a game profile without manually editing an XML file.
+	\item \emph{Extending actions}: so far, the user can map either keystrokes or mouse movements to any device control. It might also be interesting to be able to define complex, mixed sequences of keyboard and mouse actions to be mapped, including a better fine-grain control of how the sequence of executed, the timing of every step involved, etc...
+	\item \emph{Generic-device mapping}: this means extending the mapping capabilities of JSMapper to any input device, not only joysticks and similar. This i.e. to arbitrary assign keystrokes, macros, etc... to mouse buttons or to an specific key on the keyboard. Although this would need only relatively few changes to the kernel module implementation, it would represent a certain drift from the original project objectives (which were centered around gaming).
+\end{itemize}
+
+The two first, GUI-related items could be implemented without any further modification to the current implementation, just by using the provided API library to deal with the driver. This means, that in fact, they could be completely independent projects, not related at all to the JSMapper project itself.
+
+Moreover, in order to provide a satisfactory desktop integration, it would probably be better if desktop-specific applets are implemented, so i.e. both KDE and GNOME desktops feature its own GUI applet.
+
+For the GUI profile builder, a generic cross-platform toolkit such as Qt could be used.
+
+The other two suggested items would require more extensive changes in the existing code base, specially on the kernel module.
+
+
+\subsection{Kernel inclusion}
+Another interesting way to explore for the project is the possibility of the inclusion of \emph{jsmapperdev} module into the mainline kernel sources, so the module gets automatically included with every Linux distribution, just as current \emph{joydev} module is.
+
+This might of course imply some potentially extensive modifications on the existing code base, in order to match the very strict requirements of the kernel maintainers regarding code inclusion. Despite this, I keep the inclusion into mainline kernel as a mid-term objective.

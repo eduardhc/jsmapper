@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<device name="Trust FF380 Force Feedback RaceMaster">
+  <button id="0" name="TOP_L"/>
+  <button id="1" name="TOP_R"/>
+  <button id="2" name="MIDDLE_L"/>
+  <button id="3" name="MIDDLE_R"/>
+  <button id="4" name="BOTTOM_L"/>
+  <button id="5" name="BOTTOM_R"/>
+  <button id="6" name="LEVER_L"/>
+  <button id="7" name="LEVER_R"/>
+  <axis id="0" name="WHEEL"/>
+  <axis id="1" name="PEDAL"/>
+  <axis id="2" name="HAT_X"/>
+  <axis id="3" name="HAT_Y"/>
+</device>

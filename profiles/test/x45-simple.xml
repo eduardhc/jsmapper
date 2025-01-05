@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<profile target="Saitek X45 Flight Control Stick" name="Test">
+  <description>A very simple profile </description>
+  <actions>
+      <action name="Intro" type="key" key="ENTER" >
+        <description>An simple action which presses ENTER key</description>
+      </action>
+      <action name="Up" type="key" key="UP" >
+        <description>Cursor up</description>
+      </action>
+      <action name="Down" type="key" key="DOWN" >
+        <description>Cursor down</description>
+      </action>
+      <action name="Left" type="key" key="LEFT" >
+        <description>Cursor left</description>
+      </action>
+      <action name="Right" type="key" key="RIGHT" >
+        <description>Cursor right</description>
+      </action>
+  </actions>
+  <mode name="Root">
+    <description>The root mode</description>
+	<button id="TRIGGER" action="Intro" />
+	<axis	id="HAT2_X">
+	  <band low="-1" high="-1" action="Left" />
+	  <band low="1" high="1" action="Right" />
+	</axis>
+	<axis	id="HAT2_Y">
+	  <band low="-1" high="-1" action="Down" />
+	  <band low="1" high="1" action="Up" />
+	</axis>
+  </mode>
+</profile>

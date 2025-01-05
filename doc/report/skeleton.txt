@@ -1,0 +1,55 @@
+1.- Overview
+  - abstract organization
+  - what is jsmapper
+  - motivation
+  - objective
+ 
+
+2.- Preliminary analysis
+  - overview 
+  - linux kernel input subsystem 
+  - joystick support on Linux
+  - the idea of jsmapper
+
+
+3.- Contents
+  - overview of project structure: kernel, C++ library & userland tools
+  - the kernel module
+  - the C++ library
+  - the userland tools
+
+
+4.- User manual
+  - compiling & installing the project
+  - creating a device map
+  - creating a game profile
+  - loading a game profile
+
+5.- Specification
+  - requisites: 
+    - functional: creating game profiles & using them
+    - non-functional: usability, security, stability, ...
+  - conceptual model 
+
+6.- Design
+  - overview of the system
+  - kernel module design (including sequence diagrams)
+  - library 
+  - userland tools
+
+7.- Development
+  - tools used: compiler, IDE, kernel sources, libraries, etc...
+ 
+8.- Analysis (?)
+  - GUI: CLI tools
+
+9.- Planification & economical analysis
+  - planification
+  - economical analysis
+
+10.- Conclusions & future development
+
+11.- Bibliography
+
+12.- Glossary
+

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="12cm" height="12cm" viewBox="9 608 237 226" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="9.31388" y="726.986">
+    <tspan x="9.31388" y="726.986">Axis Range</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="101.912" y="612" width="20" height="56"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="101.912" y="612" width="20" height="56"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="101.912" y="668" width="20" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="101.912" y="668" width="20" height="40"/>
+  </g>
+  <g>
+    <rect style="fill: #7f7f7f" x="101.912" y="708" width="20" height="26.0338"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="101.912" y="708" width="20" height="26.0338"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="101.912" y="733.784" width="20" height="50.2168"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="101.912" y="733.784" width="20" height="50.2168"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="101.912" y="784" width="20" height="48"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="101.912" y="784" width="20" height="48"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="121.912" y1="640" x2="190.264" y2="640"/>
+    <polygon style="fill: #000000" points="197.764,640 187.764,645 190.264,640 187.764,635 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="197.764,640 187.764,645 190.264,640 187.764,635 "/>
+  </g>
+  <text font-size="10.16" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="204" y="644">
+    <tspan x="204" y="644">Action 1</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="121.912" y1="688" x2="186.264" y2="688"/>
+    <polygon style="fill: #000000" points="193.764,688 183.764,693 186.264,688 183.764,683 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="193.764,688 183.764,693 186.264,688 183.764,683 "/>
+  </g>
+  <text font-size="10.16" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="204" y="692">
+    <tspan x="204" y="692">Action 2</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="121.912" y1="758.892" x2="188.012" y2="758.495"/>
+    <polygon style="fill: #000000" points="195.511,758.449 185.542,763.509 188.012,758.495 185.481,753.51 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="195.511,758.449 185.542,763.509 188.012,758.495 185.481,753.51 "/>
+  </g>
+  <text font-size="10.16" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="204" y="760">
+    <tspan x="204" y="760">Action 3</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="121.912" y1="808" x2="190.264" y2="808"/>
+    <polygon style="fill: #000000" points="197.764,808 187.764,813 190.264,808 187.764,803 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="197.764,808 187.764,813 190.264,808 187.764,803 "/>
+  </g>
+  <text font-size="10.16" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="204" y="812">
+    <tspan x="204" y="812">Action 4</tspan>
+  </text>
+  <text font-size="10.16" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="132" y="724">
+    <tspan x="132" y="724">(no action)</tspan>
+  </text>
+  <text font-size="7.90222" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="80" y="616">
+    <tspan x="80" y="616">max</tspan>
+  </text>
+  <text font-size="7.90222" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="80" y="832">
+    <tspan x="80" y="832">min</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 4; stroke: #000000" x1="40" y1="712" x2="40" y2="616.472"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="45,624.236 40,614.236 35,624.236 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 4; stroke: #000000" x1="40" y1="732" x2="40" y2="827.528"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="35,819.764 40,829.764 45,819.764 "/>
+  </g>
+</svg>

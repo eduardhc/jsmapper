@@ -1,0 +1,74 @@
+\chapter{Specification}\label{chap:specification}
+\section{Overview} 
+This chapter presents the functional and non-functional requisites of the project, including usability constraints and possible use-cases.
+
+\section{Functional Requisites} 
+
+\subsection{Use Cases}
+The main use case for this software will be a user wanting to ``program'' its game device, either a joystick, a wheel drive or a gamepad i.e., to generate keystrokes and mouse movements that cause actions on the game being played when operating on the buttons. The range of actions that can be simulated varies from issuing simple keystrokes, mouse movements and clicks, to complete keyboard macro sequences, which would allow him or her to i.e. display a menu using a keyboard shortcut, moving through the available options in it by using the cursor keys, then selecting the desired option by issuing the ENTER key. A whole sequence such as the one described cold be mapped to a button on the device, so the user can trigger it simply by operating the button.
+
+As the implementation allows for advanced features such as modes and shift state buttons, the user will also be able to simultaneoulsly load different mapping schemes that are appropiate for differents phases of the game, and then switch between them by toggling a button on the device or by moving an axis between certain positions.
+
+The user is expected to create ``profiles'' for the games to play, each of one containing the mapping schema to apply (including the possible modes, etc...) for the game, and then load them into the driver before starting the game.
+
+A secondary use case could be to use the game device to control not a game, but either the desktop itself or an specific software like a word processor or similar. Although not the intended use case (the software was created having games in mind), it could also be perfectly used for such a task.
+
+\subsection{Target Users}
+The project is initially intended for Linux users who want to take a better profit of their game devices under this OS, by providing ``programming'' capabilities to their device in a way similar to what is offered for advanced devices on the Windows platform. 
+
+Also, the target user is anyone wanting to run ``games'' under the Linux operating system, be it native Linux games or Windows games running under Wine or a virtualized Windows session on a Linux host. The software is specially suitable for ``complex'' games such as flight simulators, as they usually feature a very large set of commands that can be invoked using shortcuts and that can bebefit from the ability to map such actions to device controls.
+
+Although no special abilities are required to use the software (compiling and installing it's a whole different story, and in a future it should be made by Linux distribution packagers), the user should at least know how to edit an XML file using an standard text editor such as \emph{Kate}, \emph{GEdit}, etc..., and how to invoke executables from the shell command line interface (CLI), as this will be the preliminary way to interact with the kernel module, at least until a GUI frontend is developed. However, this capabilities should be taken for granted for any minimally experienced Linux user.
+
+
+\section{Non-functional Requisites} 
+
+\subsection{Usability}
+
+\subsubsection{General Usage}
+Main usability constraint is to keep the required competences for the common target user as low as possible. With this in mind, the only required abilities on to use the software are the following:
+\begin{itemize}
+ \item Editing text files (XML) using a text editor
+ \item Using command line
+\end{itemize}
+
+As mentioned before, this capabilities should be taked for granted for any minimally experienced Linux user. The only drawback could be the fact that profile files are in XML format, which can be a little confusing to those not familiarised with it. 
+
+However, a GUI frontend is planned which would allow to create game profiles in a graphical way, so this will contribute to set the software usability some degrees higher.
+
+\subsubsection{Installation}
+Setting up the project and compiling is a little more complicated, as it involves some more skills that simply using it. As this task is intended to be performed by Linux distruibution packagers, it's analyzed separately.
+
+Anyway, a user wanting to compile and install the software directly from the source code should be competent in the following areas:
+\begin{itemize}
+  \item Be able to else checkout the code from a remote Git repository, or to download and extract a TAR file containing an snapshot.
+  \item Be able to install the required dependencies (as mentioned in ``Development'' chapter) needed to compile the project.
+  \item Be familiarised with compiling and installing kernel modules, including necessary steps such as installing the appropiate kernel sources and prepare them to compile external modules.
+  \item Know how to compile a \emph{cmake}-based project.
+\end{itemize}
+
+See section~\ref{section:compiling} on chapter~\ref{chap:development} for detailed instructions about how to compile and install the project from the source code.
+
+\subsection{Stability}
+The stability of the code base is must, specially considering that the crucial part of the software is a kernel module running in privileged kernel space. This means that, if the module behaves badly then it can affect the integrity and stability of the whole system, and not only that of a single program.
+
+For such a reason, special care is taken when passing parameters between user space and kernel space, in order to avoid accidental (or intended) buffer overflows, out of bounds accesses, etc... The kernel module code also tries to ensure always that concurrent access to common variables is properly regulated using mutexes and spinlocks. This is specially important as notifications from the input system core usually gets called from within an IRQ context, so they can be received at any time (even during profile loading sequence).
+
+\subsection{Maintainability}
+Maintability of the code is granted, given it's not tight to any version-specific feature of any of the dependencies required:
+ \begin{itemize}
+  \item The current Linux kernel input subsystem was designed around 2.4 version, and hasn't suffered major changes since that nor it's expected to suffer major changes in future revision. The project itself has been succesfully compiled against kernel versions ranging from 2.30 to 3.6.9, the current stable version at time of writing.
+  \item The C/C++ library is based mainly on GNU's standard \emph{libstdc++} library, which is a very mature and stable product. Other dependencies used, such as \emph{libxml2} and \emph{libncurses}, are also in a full mature state and shouldn't suffer  major changes in the future.
+ \end{itemize}
+
+With these constraints in mind, maintanability of the project should not pose any major problems nor in the short nor medium terms envisaged.
+ 
+
+\section{Conceptual Model} 
+The conceptual model of the software is more extensively described in chapter~\ref{chap:design}, ``Design''. However, it can be quickly summarized by dividing the project structure in 3 main components:
+\begin{itemize}
+ \item A kernel module which acts an \emph{event filter} for the game devices, and which intercepts events from the hardware device driver and converts them to simulated mouse and keyboard actions.
+ \item A C/C++ library which wraps access to the kernel module, by providing easy-to-use classes that deal with the IOCTL API intrinsics.
+ \item A set of \emph{CLI userspace tools}, which are what the user will use to interact with the driver.
+\end{itemize}
+

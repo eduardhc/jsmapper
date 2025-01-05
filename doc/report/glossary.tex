@@ -1,0 +1,290 @@
+%
+% Glossary definitions
+%
+
+\newglossaryentry{os}
+{
+  name=OS,
+  description={Acronym for ``Operating System''}
+}
+
+\newglossaryentry{foss}
+{
+  name=FOSS,
+  description={Acronym for ``Free and Open Source Software''}
+}
+
+\newglossaryentry{linux}
+{
+  name=Linux,
+  description={Unix-like computer operating system, assembled under the model of free and open source software development and distribution}
+}
+
+\newglossaryentry{kde}
+{
+  name=KDE,
+  description={Desktop environment and graphical user interface for Linux, focused on customizability and targeted for advanced users}
+}
+
+\newglossaryentry{gnome}
+{
+  name=Gnome,
+  description={Desktop environment and graphical user interface for Linux, focused on accessibility and user friendliness}
+}
+
+\newglossaryentry{windows}
+{
+  name=Windows,
+  description={Propietary graphical interface and operating system, developed, marketed, and sold by Microsoft, Inc}
+}
+
+\newglossaryentry{wine}
+{
+  name=Wine,
+  description={Acronym for ``Wine Is Not an Emulator'', a compatibility layer capable of running Windows applications on several POSIX-compliant operating systems, such as Linux}
+}
+
+\newglossaryentry{kernel}
+{
+  name=Kernel,
+  description={The main component of most computer operating systems, usually running under \emph{protected} (or \emph{privileged}) mode, and responsible of managing system resources among running applications.}
+}
+
+\newglossaryentry{kernel_module}
+{
+  name=Kernel Module,
+  description={Loadable module for an operating system kernel, usually providing extended capabilities for that kernel,  such as support for specific hardware devices}
+}
+
+\newglossaryentry{userspace}
+{
+  name=Userspace,
+  description={Memory area and processor mode in which user applications run under modern operating systems}
+}
+
+\newglossaryentry{workqueue}
+{
+  name=Workqueue,
+  description={In Linux kernel, a low-level mechanism which allows an arbitrary operation to be ''queued`` onto a service queue that gets dispatched by a background thread}
+}
+
+\newglossaryentry{thread}
+{
+  name=Thread,
+  description={In Linux kernel, an independent flow of control that operates within the same address space as the kernel, and usually used to perform background actions}
+}
+
+\newglossaryentry{input_system}
+{
+  name=Input Subsystem,
+  description={In Linux, the part of the kernel responsible of managing attached input devices and providing notifications about user interaction up to userspace}
+}
+
+\newglossaryentry{input_device}
+{
+  name=Input Device,
+  description={A pluggable computer device intended for user input, such as a keyboard, a mouse, a graphical tablet, etc...}
+}
+
+\newglossaryentry{game_device}
+{
+  name=Game Device,
+  description={An input device specifically designed to improve user experience with computer games, such as a joystick or a wheel drive}
+}
+
+\newglossaryentry{control}
+{
+  name=Control,
+  description={In an input or game device, each of the elements present on it designed to provide user interaction}
+}
+
+\newglossaryentry{button}
+{
+  name=Button,
+  description={In a game device, a control featuring two possible states, ``pressed'' and ``released''}
+}
+
+\newglossaryentry{switch_button}
+{
+  name=Switch Button,
+  description={In a game device, a control featuring different fixed, available positions, each of one internally implemented using a regular button control}
+}
+
+\newglossaryentry{hat_button}
+{
+  name=Hat Button,
+  description={In a game device, usually a ``hat''-type button providing direction (up/down/left/right) control. They are usually implemented internally using either regular buttons or axes}
+}
+
+\newglossaryentry{axis}
+{
+  name=Axis,
+  description={In a game device, a control providing a continuous range of discrete values, usually designed to represent magnitudes which are analogous in ``real world'', such as direction on a wheel drive, throttle, brake, etc... }
+}
+
+\newglossaryentry{band}
+{
+  name=Band,
+  description={In JSMapper, an interval of values defined over an axis, which can be used to map actions to specific portions of an axis range}
+}
+
+\newglossaryentry{event}
+{
+  name=Event,
+  description={In Linux input susbsystem, a notification sent by a hardware device whenever the user interacts with any of the controls on it}
+}
+
+\newglossaryentry{action}
+{
+  name=Action,
+  description={In JSMapper, a ``fake'' event (or events) to be simulated, such as key press \& release events, or mouse movement events, whenever a control on the device is operated}
+}
+
+\newglossaryentry{macro}
+{
+  name=Macro,
+  description={In JSMapper, an action defining an arbitrary sequence of keys to be sent}
+}
+
+\newglossaryentry{mode}
+{
+  name=Mode,
+  description={In JSMapper, a set of actions mapped to controls available on a device, plus a ``condition'' defining under which circumstances the mode is active.}
+}
+
+\newglossaryentry{condition}
+{
+  name=Condition,
+  description={In JSMapper, the circumstances defining if a given mode is active or not, such an specific button in ``pressed'' state or else an axis positioned on a given band}
+}
+
+\newglossaryentry{profile}
+{
+  name=Profile,
+  description={In JSMapper, a set of modes and conditions for a device targeting an specific game or program, and which can be serialized to disk for easy loading into the device}
+}
+
+\newglossaryentry{serial}
+{
+  name=Serial,
+  description={In computing, an physical interface to which information transmits one bit at a time. In PC computers, it was available usually throught an RS-232 port}
+}
+
+\newglossaryentry{x11}
+{
+  name=X11,
+  description={(or ``X Window System''), a computer software and network protocol providing the basis for the Graphical User Interface on modern Unix and Linux systems}
+}
+
+\newglossaryentry{serialization}
+{
+  name=Serialization,
+  description={In JSMapper, the act of storing a profile definition into an XML file, so it can be restored later}
+}
+
+\newglossaryentry{xml}
+{
+  name=XML,
+  description={Acronym for ``eXtensible Markup Language''}
+}
+
+\newglossaryentry{git}
+{
+  name=Git,
+  description={A distributed source control software extensively used in FOSS projects, originally developed by Linus Torvalds}
+}
+
+\newglossaryentry{cmake}
+{
+  name=CMake,
+  description={A popular cross-platform, open-source build system developed by Kitware, Inc}
+}
+
+\newglossaryentry{tar}
+{
+  name=TAR,
+  description={A file format widely used in Unix world, containing a file tree layout and usually stored on disk or tape, either in compressed or uncompressed form}
+}
+
+\newglossaryentry{api}
+{
+  name=API,
+  description={Acronym for ``Application Program Interface''}
+}
+
+\newglossaryentry{ioctl}
+{
+  name=IOCTL,
+  description={Acronym for ``Input/Output Control'', a generic mechanism for device-specific input/output operations which cannot be expressed by regular system calls, such as device parametrization}
+}
+
+\newglossaryentry{hal}
+{
+  name=HAL,
+  description={Acronym for ``Hardware Abstraction Layer''. In Linux, a service providing an abstract view of the hardware attached to the system, plus notifications to userspace about device pluging and unplugging}
+}
+
+\newglossaryentry{dbus}
+{
+  name=D-BUS,
+  description={An open-source inter-process communications system for Linux originally developed by RedHat, Inc}
+}
+
+\newglossaryentry{hid}
+{
+  name=HID,
+  description={Acronym for ``Human Interface Device'', a device class defined by USB specification specifically designed for user interaction devices, such as a keyboard, a mouse, etc... Most input and game devices lays within this class.}
+}
+
+\newglossaryentry{irq}
+{
+  name=IRQ,
+  description={Acronym for ``Interrupt Request'', a hardware mechanism through which a device claims attention from kernel, i.e. to notify user interaction }
+}
+
+\newglossaryentry{isr}
+{
+  name=ISR,
+  description={Acronym for ``Interrupt Service Routine'', the part of the kernel responible of handling IRQ requests}
+}
+
+\newglossaryentry{irq_context}
+{
+  name=IRQ Context,
+  description={Calling context in which a function is called from within an ISR, and where some restrictions apply}
+}
+
+\newglossaryentry{cli}
+{
+  name=CLI,
+  description={Acronym for ``Command Line Interface''}
+}
+
+\newglossaryentry{gui}
+{
+  name=GUI,
+  description={Acronym for ``Graphical User Interface''}
+}
+
+\newglossaryentry{usb}
+{
+  name=USB,
+  description={Acronym for ``Universal Serial Bus''}
+}
+
+\newglossaryentry{ps2}
+{
+  name=PS/2,
+  description={A device port found in old IBM Personal System/2 computers}
+}
+
+\newglossaryentry{hotas}
+{
+  name=HOTAS,
+  description={Acronym for ``Hands-On-Throttle-And-Stick'', usually a device composed of both a joystick and a throttle,  featuring a number of buttons, so a plane pilot can perform most usual tasks without taking hands out from the controls}
+}
+
+
+
+\glsaddall
+\printglossaries

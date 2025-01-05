@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<profile target="Saitek X45 Flight Control Stick" name="Test">
+  <description>A simple profile defining a macro </description>
+  <actions>
+	  <action name="Intro" type="key" key="ENTER" />
+      <action name="Macro" type="macro" spacing="100" >
+        <description>Invokes File menu, Print command</description>
+        <keys>
+            <key key="F" modifiers="LEFTALT" />
+            <key key="P" />
+        </keys>
+      </action>
+  </actions>
+  <mode name="Root">
+    <description>The root mode</description>
+	<button id="TRIGGER" action="Intro" />
+	<button id="FIRE" action="Menu" />
+  </mode>
+</profile>

@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<profile target="Logitech Inc. WingMan Extreme Digital 3D" name="CRRCSim">
+	
+	<description>CRRCSim profile for Logitech Wingman Extreme</description>
+
+	<!-- 
+		
+		Action list
+	
+	-->
+	
+	<actions>
+		<action name="None" type="none" />
+		
+		<action name="Pause" type="key" key="P" />
+		<action name="Restart" type="key" key="R" />
+		<action name="Training" type="key" key="T" />
+		<action name="ZoomIn" type="key" key="KPMINUS" />
+		<action name="ZoomOut" type="key" key="KPPLUS" />
+		<action name="Menu" type="key" key="ESC" />
+		
+		<action name="MouseLClick" type="button" button="LEFT" />	
+		<action name="MouseRClick" type="button" button="RIGHT" />	
+		<action name="MouseLeft" type="axis" axis="X" step="-1" spacing="5" />
+		<action name="MouseRight" type="axis" axis="X" step="1" spacing="5"  />
+		<action name="MouseUp" type="axis" axis="Y" step="-1" spacing="5"  />
+		<action name="MouseDown" type="axis" axis="Y" step="1" spacing="5"  />
+	</actions>
+		
+
+	<!-- 
+		
+		Root modes
+	
+		Contains all base assignements. 
+	-->
+	
+	<mode name="ROOT">
+		<description>The root mode</description>
+		
+		<button id="TRIGGER" action="Pause" />
+		<button id="BTN_02" action="None" />
+		<button id="BTN_03" action="Training" />
+		<button id="BTN_04" action="ZoomIn" />
+		<button id="BTN_05" action="ZoomOut" />
+		<button id="BTN_06" action="Menu" />
+		
+		<!--
+		
+			Basic shifted submode
+			
+		-->
+		
+		<mode name="Shift_07">
+			<condition type="button" id="BTN_07" />
+			
+			<button id="TRIGGER" action="Restart" />
+			
+			<button id="BTN_04" action="MouseRClick" />
+			<button id="BTN_05" action="MouseLClick" />
+			<axis id="HAT_X" >
+			  <band low="-1" high="-1" action="MouseLeft" />
+			  <band low="1" high="1" action="MouseRight" />
+			</axis>
+			<axis id="HAT_Y" >
+			  <band low="-1" high="-1" action="MouseUp" />
+			  <band low="1" high="1" action="MouseDown" />
+			</axis>
+		</mode>
+		
+	</mode>
+			
+</profile>
+

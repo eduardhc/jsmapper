@@ -1,0 +1,63 @@
+\documentclass[a4paper,11pt]{report}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage[toc,nonumberlist]{glossaries}
+\graphicspath{{./img/}}
+
+\begin{document}
+
+%
+% include title page:
+%
+\include{title}
+
+\tableofcontents
+\makeglossaries
+
+
+%
+% set formatting options for ``text'' section
+%
+\setlength{\parskip}{10pt plus 1pt minus 1pt}
+
+\lstset{
+	language=C, 
+	frame=single, 
+	tabsize=4, 
+	basicstyle=\tiny
+}
+
+\lstset{
+	language=XML, 
+	frame=single, 
+	tabsize=4, 
+	basicstyle=\tiny
+}
+
+
+%
+% include chapters
+%
+\include{introduction}
+\include{pre_analysis}
+\include{specification}
+\include{design}
+\include{development}
+\include{analysis}
+\include{planning}
+\include{conclusions}
+\include{glossary}
+\include{bibliography}
+\appendix
+\include{user_manual}
+\include{user_manual_create_device_map}
+\include{user_manual_create_profile}
+\include{user_manual_using_profiles}
+
+\end{document}

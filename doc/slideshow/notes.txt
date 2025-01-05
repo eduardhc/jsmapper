@@ -1,0 +1,19 @@
+1 INTRODUCCIO
+
+  
+2 ARQUITECTURA
+
+	- pendent:
+	
+		- modes:
+			- afegir mode SHIFT a seques, si es que funciona...
+ 
+
+3 UTILITZACIO
+
+	- pendent:
+		- exemple simple de perfil amb modes
+
+
+4 NOTES FINALS
+

@@ -1,0 +1,33 @@
+-------------------------------------------------------------------------------
+
+JSMapper source tree contents
+
+Author: Eduard Huguet
+Last modified: 2013-05-12
+
+-----------------------------------------------------------------------------
+
+The source package is structured in the following way:
+
+root
+|
+|-- doc: project documentation, including presentation slideshow, project 
+|        report's LaTeX source files, and Doxygen configuration file.
+|
+|-- src: source code root folder
+|   |
+|   |-- bin: userspace command-line tools source files
+|   |
+|   |-- lib: userspace wrapper library source files
+|   |
+|   |-- linux: kernel module source files
+|   |
+|   |-- share: shared data files
+|   |
+|   |-- test: unit tests for userspace library
+|   
+|-- pkg: packaging utilities
+|   
+|-- profiles: example profiles 
+
+

@@ -1,0 +1,23 @@
+\chapter{Introduction}\label{chap:intro}
+\section{What is JSMapper}
+JSMapper is a Linux joystick mapping tool designed for gamers, who want to take full profit of their game devices under this operating system. It allows the user to generate keystrokes, mouse events, and complex key sequences and map them to any button or axis, while also supporting advanced features such as different mapping modes, which can be selected based on either button states or axis positions.
+What makes JSMapper special is that it operates at kernel level, so it can be used either for games running on Linux, Windows games running under Wine, or even Windows games running under a virtual machine on a Linux host.
+
+\section{Motivations}
+There's a huge number of gaming devices available for personal computers these days. They range from simple joysticks featuring only an stick and a couple of buttons, to advanced, specialized devices such as HOTAS combos (usually splitted in two devices, an stick part and a throtle part), or wheel drives featuring 3-pedals sets (or even a seat!).
+
+These kind of devices are usually shipped along with specific software tools for Windows, so the user can fully program the device for the game to play in any desired way. Although most of the existing game devices are recognized by Linux, no software solution is available for this OS to take full advantage of the advanced features of these devices, such as the ability to define different operating modes (which can be selected using an switch on the device itself), so different commands can be assigned to the same button. This is a really useful feature for i.e. flight simulation games, where user can define different profiles for navigation, air-to-air and air-to-ground modes, and select between them simply by selecting the appropiate switch position on the device.
+
+The reason to start JSMapper project was to have a similar solution for Linux, which also could be as universal as possible so any gaming device under this OS could provide similar functionality to that offered by their propietary solutions available for Windows. 
+
+\section{Objective}
+As stated above, the objective for this project will be to create an universal game device mapping system for Linux, so any supported  joystick, wheel drive or similar device can be now rendered fully programmable by the user. Also, the resulting system not only will render this feature available to pure Linux games, but also to Windows games running either under Wine or a virtualized Windows machine on Linux.
+
+\section{Document Structure}
+The first part of the document (chapters \ref{chap:preanalysis} ``Preliminary Analysis'' and \ref{chap:specification} ``Specification'') shows a detailed analysis of how the input subsystem works in Linux kernel, plus how it might be improved by means of the capabilities offered by \emph{JSMapper}, regarding the usage of advanced game devices.
+
+Second part is composed by chapters \ref{chap:design} ``Design'', \ref{chap:development} ``Development'' and \ref{chap:analysis}, which offer a comprehensive view about the project, ranging from architecture design to development issues and technical decisions made during the development phase.
+
+Third part (chapters \ref{chap:planning} ``Planning'' and \ref{chap:conclusions} ``Conclusions'') contains a reference about how the project development has been structured in time, plus a discussion of possible improvements that could be added in successive development phases.
+
+Finally, fourth part is composed of appendix \ref{chap:usermanual}, containing the reference manual for final users.

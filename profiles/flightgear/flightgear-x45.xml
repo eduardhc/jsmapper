@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<profile target="Saitek X45 Flight Control Stick" name="FlightGear">
+	<description>FlightGear profile for Saitek X-45</description>
+	
+	<!-- 
+		
+		Action list
+	
+	-->
+	
+	<actions>
+		
+		<action name="None" type="none" />
+		
+		<!-- 
+			Various
+		-->
+		
+		<action name="None" type="none" />
+		<action name="Pause" type="key" key="P" />
+		
+		
+		<!-- 
+			Ground / take-off / landing operations
+		-->
+		
+		<action name="Brake" type="key" key="B" >
+			<description>Activates wheels brake</description>
+		</action>
+		<action name="ParkingBrake" type="key" key="B" modifiers="LEFTSHIFT">
+			<description>Toggles parking brake</description>
+		</action>
+		
+		<action name="MagnetoSwitchLeft" type="key" key="APOSTROPHE" modifiers="RIGHTALT">
+			<description>Move magneto switch one position to the left</description>
+		</action>
+		<action name="MagnetoSwitchRight" type="key" key="BACKSLASH" modifiers="RIGHTALT">
+			<description>Move magneto switch one position to the right</description>
+		</action>
+		<action name="EngineStart" type="key" key="S">
+			<description>Start engines</description>
+		</action>
+		
+		<action name="GearUp" type="key" key="G">
+			<description>Gear up</description>
+		</action>
+		<action name="GearDown" type="key" key="G" modifiers="LEFTSHIFT">
+			<description>Gear down</description>
+		</action>
+
+
+		<!-- 
+			Plane control
+		-->
+		
+		<action name="AirBrake" type="key" key="B" modifiers="LEFTCTRL">
+			<description>Toggles air brake</description>
+		</action>
+		<action name="TrimUp" type="key" key="HOME" >
+			<description>Elevator trim down</description>
+		</action>
+		<action name="TrimDown" type="key" key="END" >
+			<description>Elevator trim up</description>
+		</action>
+		<action name="FlapsExtend" type="key" key="RIGHTBRACE" modifiers="RIGHTALT">
+			<description>Extends flaps one step down</description>
+		</action>
+		<action name="FlapsRetract" type="key" key="LEFTBRACE" modifiers="RIGHTALT">
+			<description>Retract flaps one step up</description>
+		</action>
+
+
+		<!-- 	
+			View handling 			
+		-->
+		
+		<action name="ViewNext" type="key" key="V">
+			<description>Cycle view modes (next)</description>
+		</action>
+		<action name="ViewPrev" type="key" key="V" modifiers="LEFTSHIFT">
+			<description>Cycle view modes (previous)</description>
+		</action>
+		<action name="ViewCockpit" type="key" key="V" modifiers="LEFTCTRL">
+			<description>Switch to cockpit view</description>
+		</action>
+		<action name="ZoomIn" type="key" key="X">
+			<description>Zooms view in</description>
+		</action>
+		<action name="ZoomOut" type="key" key="X" modifiers="LEFTSHIFT">
+			<description>Zooms view out</description>
+		</action>
+		<action name="ZoomReset" type="key" key="X" modifiers="LEFTCTRL">
+			<description>Resets zoom level to default</description>
+		</action>
+		<action name="ViewClickAreas" type="key" key="C" modifiers="LEFTCTRL">
+			<description>Toggles visibility of cockpit controls click areas</description>
+		</action>
+
+
+		<!-- 	
+			Mouse Ctrl
+		-->
+		
+		<action name="MouseClick" type="button" button="LEFT" />
+		<action name="MouseLeft" type="axis" axis="X" step="-1" spacing="5" />
+		<action name="MouseRight" type="axis" axis="X" step="1" spacing="5"  />
+		<action name="MouseUp" type="axis" axis="Y" step="-1" spacing="5"  />
+		<action name="MouseDown" type="axis" axis="Y" step="1" spacing="5"  />
+
+
+		<!-- 	
+			Desktop handling
+		-->
+		
+		<action name="DesktopLeft" type="key" key="LEFT" modifiers="LEFTALT;LEFTCTRL" />
+		<action name="DesktopRight" type="key" key="RIGHT" modifiers="LEFTALT;LEFTCTRL" />
+		<action name="DesktopUp" type="key" key="UP" modifiers="LEFTALT;LEFTCTRL" />
+		<action name="DesktopDown" type="key" key="DOWN" modifiers="LEFTALT;LEFTCTRL" />
+		
+	</actions>
+	
+
+	<!-- 
+		
+		Modes
+	
+	-->
+	
+	<mode name="Root">
+		<description>The root mode</description>
+		
+		<button id="TRIGGER" action="Brake" />
+		<button id="FIRE" action="GearUp" />
+		
+		<button id="A" action="None" />
+		<button id="B" action="ViewCockpit" />
+		<button id="C" action="None" />
+		<button id="D" action="AirBrake" />
+		
+		<button id="HAT1_UP" action="TrimUp" />
+		<button id="HAT1_DOWN" action="TrimDown" />
+		<button id="HAT1_LEFT" action="FlapsRetract" />
+		<button id="HAT1_RIGHT" action="FlapsExtend" />
+		
+		<button id="MOUSE_CLICK" action="MouseClick" />
+		<button id="MOUSE_LEFT" action="MouseLeft" />
+		<button id="MOUSE_RIGHT" action="MouseRight" />
+		<button id="MOUSE_UP" action="MouseUp" />
+		<button id="MOUSE_DOWN" action="MouseDown" />
+		
+		<button id="HAT3_LEFT" action="None" />
+		<button id="HAT3_RIGHT" action="None" />
+		<button id="HAT3_UP" action="None" />
+		<button id="HAT3_DOWN" action="None" />
+		
+		<button id="MODE_1" action="None" />
+		<button id="MODE_2" action="None" />
+		<button id="MODE_3" action="None" />
+		
+		<button id="AUX_1" action="None" />
+		<button id="AUX_2" action="None" />
+		<button id="AUX_3" action="None" />
+		
+		<button id="SHIFT" action="None" />
+		
+
+		<!-- 
+			
+			Shifted mode
+		
+		-->
+		
+		<mode name="ShiftRoot">
+			<description></description>
+			<condition type="button" id="SHIFT"/>
+			
+			<button id="A" action="EngineStart" />
+			<button id="HAT1_LEFT" action="MagnetoSwitchLeft" />
+			<button id="HAT1_RIGHT" action="MagnetoSwitchRight" />
+		
+			<button id="TRIGGER" action="ParkingBrake" />
+			<button id="FIRE" action="GearDown" />
+			
+			<button id="B" action="ZoomReset" />
+			<axis id="HAT2_X">
+				<band low="-1" high="-1" action="ViewPrev" />
+				<band low="1" high="1" action="ViewNext" />
+			</axis>
+			<axis id="HAT2_Y">
+				<band low="-1" high="-1" action="ZoomIn" />
+				<band low="1" high="1" action="ZoomOut" />
+			</axis>
+			
+			<button id="MOUSE_CLICK" action="ViewClickAreas" />
+			<button id="MOUSE_LEFT" action="DesktopLeft" />
+			<button id="MOUSE_RIGHT" action="DesktopRight" />
+			<button id="MOUSE_UP" action="DesktopUp" />
+			<button id="MOUSE_DOWN" action="DesktopDown" />
+		</mode>
+		
+	</mode>
+	
+</profile>

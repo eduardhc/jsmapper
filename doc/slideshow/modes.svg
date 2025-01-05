@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="29cm" height="21cm" viewBox="78 298 563 403" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="200,310 250,310 250,330 290.264,330 "/>
+    <polygon style="fill: #000000" points="297.764,330 287.764,335 290.264,330 287.764,325 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="297.764,330 287.764,335 290.264,330 287.764,325 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="200,310 250,310 250,480 290.264,480 "/>
+    <polygon style="fill: #000000" points="297.764,480 287.764,485 290.264,480 287.764,475 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="297.764,480 287.764,485 290.264,480 287.764,475 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="200,310 250,310 250,590 290.264,590 "/>
+    <polygon style="fill: #000000" points="297.764,590 287.764,595 290.264,590 287.764,585 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="297.764,590 287.764,595 290.264,590 287.764,585 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="420,330 470,330 470,350 510.264,350 "/>
+    <polygon style="fill: #000000" points="517.764,350 507.764,355 510.264,350 507.764,345 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="517.764,350 507.764,355 510.264,350 507.764,345 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="420,460 470,460 470,480 510.264,480 "/>
+    <polygon style="fill: #000000" points="517.764,480 507.764,485 510.264,480 507.764,475 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="517.764,480 507.764,485 510.264,480 507.764,475 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="420,590 470,590 470,630 510.264,630 "/>
+    <polygon style="fill: #000000" points="517.764,630 507.764,635 510.264,630 507.764,625 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="517.764,630 507.764,635 510.264,630 507.764,625 "/>
+  </g>
+  <g>
+    <g>
+      <g>
+        <rect style="fill: #bfbfbf" x="80" y="300" width="120" height="20"/>
+        <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="80" y="300" width="120" height="20"/>
+      </g>
+      <g>
+        <rect style="fill: #bfbfbf" x="124" y="302.1" width="33.55" height="14.9"/>
+        <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:700" x="124" y="314">
+          <tspan x="124" y="314">Root</tspan>
+        </text>
+      </g>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="80" y="320" width="120" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="80" y="320" width="120" height="20"/>
+    </g>
+    <text font-size="10.16" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="99.5276" y="333">
+      <tspan x="99.5276" y="333">CondItion: none</tspan>
+    </text>
+    <g>
+      <rect style="fill: #ffffff" x="80" y="340" width="60" height="60"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="80" y="340" width="60" height="60"/>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="140" y="340" width="60" height="60"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="140" y="340" width="60" height="60"/>
+    </g>
+    <text font-size="10.16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="110" y="360">
+      <tspan x="110" y="360">BTN_A</tspan>
+      <tspan x="110" y="372.7">BTN_B</tspan>
+      <tspan x="110" y="385.4">...</tspan>
+    </text>
+    <text font-size="10.16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="170" y="360">
+      <tspan x="170" y="360">A</tspan>
+      <tspan x="170" y="372.7">B</tspan>
+      <tspan x="170" y="385.4">...</tspan>
+    </text>
+  </g>
+  <g>
+    <g>
+      <rect style="fill: #bfbfbf" x="300" y="320" width="120" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="300" y="320" width="120" height="20"/>
+    </g>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:700" x="332.464" y="334">
+      <tspan x="332.464" y="334">Mode_1</tspan>
+    </text>
+    <g>
+      <rect style="fill: #ffffff" x="300" y="340" width="120" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="300" y="340" width="120" height="20"/>
+    </g>
+    <text font-size="10.16" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="324.702" y="353">
+      <tspan x="324.702" y="353">Condition: M1</tspan>
+    </text>
+    <g>
+      <rect style="fill: #ffffff" x="300" y="360" width="60" height="60"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="300" y="360" width="60" height="60"/>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="360" y="360" width="60" height="60"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="360" y="360" width="60" height="60"/>
+    </g>
+    <text font-size="10.16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="330" y="380">
+      <tspan x="330" y="380">TRIGGER</tspan>
+      <tspan x="330" y="392.7">...</tspan>
+    </text>
+    <text font-size="10.16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="390" y="380">
+      <tspan x="390" y="380">1</tspan>
+      <tspan x="390" y="392.7">...</tspan>
+    </text>
+  </g>
+  <g>
+    <g>
+      <rect style="fill: #bfbfbf" x="300" y="450" width="120" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="300" y="450" width="120" height="20"/>
+    </g>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:700" x="332.464" y="464">
+      <tspan x="332.464" y="464">Mode_2</tspan>
+    </text>
+    <g>
+      <rect style="fill: #ffffff" x="300" y="470" width="120" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="300" y="470" width="120" height="20"/>
+    </g>
+    <text font-size="10.16" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="324.702" y="483">
+      <tspan x="324.702" y="483">Condition: M2</tspan>
+    </text>
+    <g>
+      <rect style="fill: #ffffff" x="300" y="490" width="60" height="60"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="300" y="490" width="60" height="60"/>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="360" y="490" width="60" height="60"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="360" y="490" width="60" height="60"/>
+    </g>
+    <text font-size="10.16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="330" y="510">
+      <tspan x="330" y="510">TRIGGER</tspan>
+      <tspan x="330" y="522.7">...</tspan>
+    </text>
+    <text font-size="10.16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="390" y="510">
+      <tspan x="390" y="510">2</tspan>
+      <tspan x="390" y="522.7">...</tspan>
+    </text>
+  </g>
+  <g>
+    <g>
+      <rect style="fill: #bfbfbf" x="300" y="580" width="120" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="300" y="580" width="120" height="20"/>
+    </g>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:700" x="332.464" y="594">
+      <tspan x="332.464" y="594">Mode_3</tspan>
+    </text>
+    <g>
+      <rect style="fill: #ffffff" x="300" y="600" width="120" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="300" y="600" width="120" height="20"/>
+    </g>
+    <text font-size="10.16" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="324.702" y="613">
+      <tspan x="324.702" y="613">Condition: M3</tspan>
+    </text>
+    <g>
+      <rect style="fill: #ffffff" x="300" y="620" width="60" height="60"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="300" y="620" width="60" height="60"/>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="360" y="620" width="60" height="60"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="360" y="620" width="60" height="60"/>
+    </g>
+    <text font-size="10.16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="330" y="640">
+      <tspan x="330" y="640">TRIGGER</tspan>
+      <tspan x="330" y="652.7">...</tspan>
+    </text>
+    <text font-size="10.16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="390" y="640">
+      <tspan x="390" y="640">3</tspan>
+      <tspan x="390" y="652.7">...</tspan>
+    </text>
+  </g>
+  <g>
+    <g>
+      <rect style="fill: #bfbfbf" x="520" y="340" width="120" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="520" y="340" width="120" height="20"/>
+    </g>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:700" x="547.864" y="354">
+      <tspan x="547.864" y="354">Mode_S1</tspan>
+    </text>
+    <g>
+      <rect style="fill: #ffffff" x="520" y="360" width="120" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="520" y="360" width="120" height="20"/>
+    </g>
+    <text font-size="10.16" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="537.816" y="373">
+      <tspan x="537.816" y="373">Condition: SHIFT</tspan>
+    </text>
+    <g>
+      <rect style="fill: #ffffff" x="520" y="380" width="60" height="60"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="520" y="380" width="60" height="60"/>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="580" y="380" width="60" height="60"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="580" y="380" width="60" height="60"/>
+    </g>
+    <text font-size="10.16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="550" y="400">
+      <tspan x="550" y="400">TRIGGER</tspan>
+      <tspan x="550" y="412.7">...</tspan>
+    </text>
+    <text font-size="10.16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="610" y="400">
+      <tspan x="610" y="400">Shift+1</tspan>
+      <tspan x="610" y="412.7">...</tspan>
+    </text>
+  </g>
+  <g>
+    <g>
+      <rect style="fill: #bfbfbf" x="520" y="470" width="120" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="520" y="470" width="120" height="20"/>
+    </g>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:700" x="547.864" y="484">
+      <tspan x="547.864" y="484">Mode_S2</tspan>
+    </text>
+    <g>
+      <rect style="fill: #ffffff" x="520" y="490" width="120" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="520" y="490" width="120" height="20"/>
+    </g>
+    <text font-size="10.16" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="537.816" y="503">
+      <tspan x="537.816" y="503">Condition: SHIFT</tspan>
+    </text>
+    <g>
+      <rect style="fill: #ffffff" x="520" y="510" width="60" height="60"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="520" y="510" width="60" height="60"/>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="580" y="510" width="60" height="60"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="580" y="510" width="60" height="60"/>
+    </g>
+    <text font-size="10.16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="550" y="530">
+      <tspan x="550" y="530">TRIGGER</tspan>
+      <tspan x="550" y="542.7">...</tspan>
+    </text>
+    <text font-size="10.16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="610" y="530">
+      <tspan x="610" y="530">Shift+2</tspan>
+      <tspan x="610" y="542.7">...</tspan>
+    </text>
+  </g>
+  <g>
+    <g>
+      <rect style="fill: #bfbfbf" x="520" y="600" width="120" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="520" y="600" width="120" height="20"/>
+    </g>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:700" x="547.864" y="614">
+      <tspan x="547.864" y="614">Mode_S3</tspan>
+    </text>
+    <g>
+      <rect style="fill: #ffffff" x="520" y="620" width="120" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="520" y="620" width="120" height="20"/>
+    </g>
+    <text font-size="10.16" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="537.816" y="633">
+      <tspan x="537.816" y="633">Condition: SHIFT</tspan>
+    </text>
+    <g>
+      <rect style="fill: #ffffff" x="520" y="640" width="60" height="60"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="520" y="640" width="60" height="60"/>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="580" y="640" width="60" height="60"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="580" y="640" width="60" height="60"/>
+    </g>
+    <text font-size="10.16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="550" y="660">
+      <tspan x="550" y="660">TRIGGER</tspan>
+      <tspan x="550" y="672.7">...</tspan>
+    </text>
+    <text font-size="10.16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="610" y="660">
+      <tspan x="610" y="660">Shift+3</tspan>
+      <tspan x="610" y="672.7">...</tspan>
+    </text>
+  </g>
+</svg>

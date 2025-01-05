@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<profile name="MouseTest">
+  <description>Test profile to move mouse cursor using HAT1</description>
+  <actions>
+      <action name="MouseClick" type="button" button="LEFT" />
+      <action name="MouseLeft" type="axis" axis="X" step="-1" spacing="5" />
+      <action name="MouseRight" type="axis" axis="X" step="1" spacing="5"  />
+      <action name="MouseUp" type="axis" axis="Y" step="-1" spacing="5"  />
+      <action name="MouseDown" type="axis" axis="Y" step="1" spacing="5"  />
+  </actions>
+  <mode name="Root">
+    <description>The root mode</description>
+	<button id="TRIGGER" action="MouseClick" />
+    <axis id="HAT_X" >
+      <band low="-1" high="-1" action="MouseLeft" />
+      <band low="1" high="1" action="MouseRight" />
+    </axis>
+    <axis id="HAT_Y" >
+      <band low="-1" high="-1" action="MouseUp" />
+      <band low="1" high="1" action="MouseDown" />
+    </axis>
+  </mode>
+</profile>

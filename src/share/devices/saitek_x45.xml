@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<device name="Saitek Saitek X45 Flight Control Stick ">
+  <button id="0" name="TRIGGER" />
+  <button id="1" name="A" />
+  <button id="2" name="B" />
+  <button id="3" name="FIRE" />
+  <button id="4" name="D" />
+  <button id="5" name="MOUSE_CLICK" />
+  <button id="6" name="SHIFT" />
+  <button id="7" name="C" />
+  
+  <button id="8" name="MODE_1" />
+  <button id="9" name="MODE_2" />
+  <button id="10" name="MODE_3" />
+  
+  <button id="11" name="AUX_1" />
+  <button id="12" name="AUX_2" />
+  <button id="13" name="AUX_3" />
+  
+  <button id="14" name="HAT1_UP" />
+  <button id="15" name="HAT1_RIGHT" />
+  <button id="16" name="HAT1_DOWN" />
+  <button id="17" name="HAT1_LEFT" />
+  
+  <button id="18" name="HAT3_UP" />
+  <button id="19" name="HAT3_RIGHT" />
+  <button id="20" name="HAT3_DOWN" />
+  <button id="21" name="HAT3_LEFT" />
+  
+  <button id="22" name="MOUSE_UP" />
+  <button id="23" name="MOUSE_RIGHT" />
+  <button id="24" name="MOUSE_DOWN" />
+  <button id="25" name="MOUSE_LEFT" />
+  
+  <axis id="0" name="X" />
+  <axis id="1" name="Y" />
+  <axis id="2" name="ROTARY_1" />
+  <axis id="3" name="RUDDER" />
+  <axis id="4" name="THROTTLE" />
+  <axis id="5" name="ROTARY_2" />
+  <axis id="6" name="HAT2_X" />
+  <axis id="7" name="HAT2_Y" />
+</device>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<device name="Logitech Inc. WingMan Extreme Digital 3D">
+  <button id="0" name="TRIGGER"/>
+  <button id="1" name="BTN_02"/>
+  <button id="2" name="BTN_03"/>
+  <button id="3" name="BTN_04"/>
+  <button id="4" name="BTN_05"/>
+  <button id="5" name="BTN_06"/>
+  <button id="6" name="BTN_07"/>
+  <axis id="0" name="X"/>
+  <axis id="1" name="Y"/>
+  <axis id="2" name="RUDDER"/>
+  <axis id="3" name="THROTLE"/>
+  <axis id="4" name="HAT_X"/>
+  <axis id="5" name="HAT_Y"/>
+</device>

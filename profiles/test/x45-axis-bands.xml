@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<profile target="Saitek X45 Flight Control Stick" name="Test">
+  <description>Test actions mapped to axis bands</description>
+  <actions>
+      <action name="NONE" type="none" />
+      <action name="1" type="key" key="1" />
+      <action name="2" type="key" key="2" single="true" />
+      <action name="3" type="key" key="3" />
+  </actions>
+  <mode name="Root">
+    <description>The root mode</description>
+    <axis id="ROTARY_1" >
+      <band low="0" high="64" action="NONE" />
+      <band low="65" high="128" action="1" />
+      <band low="129" high="224" action="2" />
+      <band low="225" high="256" action="3" />
+    </axis >
+  </mode>
+</profile>

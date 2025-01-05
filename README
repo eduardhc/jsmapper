@@ -1,0 +1,60 @@
+-------------------------------------------------------------------------------
+
+JSMapper project description
+
+Author: Eduard Huguet
+Last modified: 2013-05-12
+
+-------------------------------------------------------------------------------
+
+
+1.- Introduction
+
+JSMapper is a Linux joystick programming mapping tool designed for gamers who 
+want to take full profit of advanced game devices under Linux. It allows the 
+user to map keys (and key sequences) to any button and axis, while also 
+supporting an arbitrary number of operating modes & shift states, based on 
+button & axis positions (bands).
+
+What makes JSMapper special is that it operates at kernel level, so it can be 
+used either for games running on Linux, Windows games running under Wine, or 
+even Windows games running under a VM on a Linux host.
+
+
+2.- Installation
+
+Check INSTALL file for instructions about how to compile & install the sofwtare.
+
+
+3.- Documentation
+
+At this moment, the best source for documentation is the Wiki hosted along with 
+the project in Assembla:
+
+	https://www.assembla.com/spaces/jsmapper/wiki
+    
+
+4.- Support
+
+Bugs can be reported by creating tickets in Assembla's integrated support tool:
+
+    https://www.assembla.com/spaces/jsmapper/support/tickets
+
+
+5.- Contact info
+
+The best way to contact me is through my personal email account:
+	
+	eduardhc@gmail.com
+	
+Assembla provides also a messaging mechanism for the hosted project in the 
+following address:
+
+    https://www.assembla.com/spaces/jsmapper/messages
+
+
+Any feedback, criticism, suggestion, etc... will of course be welcome.
+
+   Eduard Huguet
+   JSMapper main developer
+

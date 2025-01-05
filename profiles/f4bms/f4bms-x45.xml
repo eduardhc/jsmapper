@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+<profile target="Saitek X45 Flight Control Stick" name="F4BMS">
+	
+	<description>Falcon 4 BMS profile for Saitek X-45</description>
+	
+	<!-- 
+		
+		Action list
+	
+	-->
+	
+	<actions>
+		
+		<action name="None" type="none" />
+		
+		<!-- 
+			Ground / take-off / landing operations / etc...
+		-->
+		
+		<action name="WheelBrakes" type="key" key="K" />
+		<action name="ParkingBrake" type="key" key="P" modifiers="LEFTALT" />
+		<action name="AirBrake" type="key" key="B" modifiers="LEFTSHIFT" />
+		<action name="Gear" type="key" key="G" />
+		<action name="Eject" type="key" key="E" modifiers="LEFTCTRL" />
+		
+		
+		<!-- 
+			Views
+		-->
+		
+		<action name="View_Cockpit" type="key" key="3" />
+		<action name="View_Padlock" type="key" key="4" />
+		<action name="View_Friendly" type="key" key="8" />
+		<action name="View_External" type="key" key="0" />
+		<action name="View_Enemy" type="key" key="8" modifiers="LEFTCTRL" />
+		<!-- action name="View_Weapon" type="key" key="9" / -->
+		<action name="View_Weapon" type="key" key="7" modifiers="LEFTSHIFT" />
+		<action name="View_GlanceFwd" type="key" key="KP9" />
+		
+		
+		<!-- 
+			HOTAS
+		-->
+		
+		<action name="PinkySwitch" type="key" key="V" />
+		
+		<action name="TMS_Up" type="key" key="UP" modifiers="LEFTCTRL" />
+		<action name="TMS_Down" type="key" key="DOWN" modifiers="LEFTCTRL" />
+		<action name="TMS_Left" type="key" key="LEFT" modifiers="LEFTCTRL" />
+		<action name="TMS_Right" type="key" key="RIGHT" modifiers="LEFTCTRL" />
+		
+		<action name="DMS_Up" type="key" key="KP8" modifiers="LEFTSHIFT" />
+		<action name="DMS_Down" type="key" key="KP2" modifiers="LEFTSHIFT" />
+		<action name="DMS_Left" type="key" key="KP4" modifiers="LEFTSHIFT" />
+		<action name="DMS_Right" type="key" key="KP6" modifiers="LEFTSHIFT" />
+		
+		<action name="Cursor_Up" type="key" key="UP" />
+		<action name="Cursor_Down" type="key" key="DOWN" />
+		<action name="Cursor_Left" type="key" key="LEFT" />
+		<action name="Cursor_Right" type="key" key="RIGHT" />
+		<action name="Cursor_Reset" type="key" key="DOWN"  modifiers="LEFTSHIFT" />
+
+
+		<!-- 
+			ICP, Navigation, etc...
+		-->
+		
+		<action name="ICP_DriftCO" type="key" key="PAGEUP" modifiers="LEFTCTRL" />
+		<action name="AP_Toggle" type="key" key="A"  />
+		<action name="AP_Ovrd" type="key" key="A"  />
+		<action name="WP_Next" type="key" key="S" modifiers="LEFTSHIFT;LEFTALT" />
+		<action name="WP_Prev" type="key" key="S" modifiers="LEFTSHIFT" />
+		
+		
+		<!-- 
+			Radar, HSD, ...
+		-->
+		
+		<action name="Rdr_AzimuthScanChange" type="key" key="F8" />
+		<action name="Rdr_BarScanChange" type="key" key="F8" modifiers="LEFTSHIFT" />
+		<action name="Rdr_DecrRange" type="key" key="F3" />
+		<action name="Rdr_IncrRange" type="key" key="F4" />
+		<action name="HSD_DecrRange" type="key" key="F11" />
+		<action name="HSD_IncrRange" type="key" key="F12" />
+		
+		
+		<!-- 
+			Countermesures
+		-->
+		
+		<action name="CM_ECM" type="key" key="J" />
+		<action name="CM_Drop" type="key" key="X" />
+		<action name="CM_IncrProgram" type="key" key="Z" modifiers="LEFTSHIFT" />
+		<action name="CM_DecProgram" type="key" key="X" modifiers="LEFTSHIFT" />
+		
+		
+		<!-- 
+			Weapons
+		-->
+		
+		<action name="Wpn_NextAA" type="key" key="ENTER" />
+		<action name="Wpn_NextAG" type="key" key="BACKSPACE" />
+		<action name="Wpn_Release" type="key" key="SPACE" />
+		<action name="Trigger" type="key" key="SLASH" />
+		<action name="Trigger_1stDet" type="key" key="SLASH" modifiers="LEFTCTRL" />
+		<action name="Msl_Step" type="key" key="SLASH" modifiers="LEFTSHIFT" />
+		<action name="Msl_Uncage" type="key" key="U" />
+		
+		
+		<!-- 
+			Master Modes & Overrides
+		-->
+		
+		<action name="Master_NAV" type="key" key="KPENTER" modifiers="LEFTSHIFT" single="true" >
+			<description>Master NAV mode</description>
+		</action>
+		<action name="Master_AA" type="key" key="KP0" modifiers="LEFTSHIFT" single="true" >
+			<description>Master A/A mode</description>
+		</action>
+		<action name="Master_AG" type="key" key="KPDOT" modifiers="LEFTSHIFT" single="true" >
+			<description>Master A/A mode</description>
+		</action>
+		
+		<action name="MRM_Ovrd" type="key" key="M" single="true" >
+			<description>Enters MRM Override mode</description>
+		</action>
+		<action name="SRM_Ovrd" type="key" key="D" single="true" >
+			<description>Enters SRM Override mode</description>
+		</action>
+		<action name="Cancel_Ovrd" type="key" key="C" single="true" >
+			<description>Cancels SRM/MRM Override mode</description>
+		</action>
+		
+	</actions>
+	
+
+	<!-- 
+		
+		Root modes
+	
+		Contains all base assignements. 
+	-->
+	
+	<mode name="ROOT">
+		<description>The root mode</description>
+		
+		<button id="MODE_1" action="Master_AG" />
+		<button id="MODE_2" action="Master_NAV" />
+		<button id="MODE_3" action="Master_AA" />
+		
+		<button id="AUX_1" action="MRM_Ovrd" />
+		<button id="AUX_2" action="Cancel_Ovrd" />
+		<button id="AUX_3" action="SRM_Ovrd" />
+		
+		<button id="TRIGGER" action="None" />
+		<button id="FIRE" action="None" />
+		<button id="SHIFT" action="None" />
+		
+		<button id="A" action="Rdr_AzimuthScanChange" />
+		<button id="B" action="View_Cockpit" />
+		<button id="C" action="Msl_Step" />
+		<button id="D" action="AirBrake" />
+		
+		<button id="HAT1_UP" action="TMS_Up" />
+		<button id="HAT1_DOWN" action="TMS_Down" />
+		<button id="HAT1_LEFT" action="TMS_Left" />
+		<button id="HAT1_RIGHT" action="TMS_Right" />
+		
+		<button id="MOUSE_UP" action="Cursor_Up" />
+		<button id="MOUSE_DOWN" action="Cursor_Down" />
+		<button id="MOUSE_LEFT" action="Cursor_Left" />
+		<button id="MOUSE_RIGHT" action="Cursor_Right" />
+		<button id="MOUSE_CLICK" action="Cursor_Reset" />
+		
+		<button id="HAT3_UP" action="CM_ECM" />
+		<button id="HAT3_DOWN" action="CM_Drop" />
+		<button id="HAT3_LEFT" action="CM_DecProgram" />
+		<button id="HAT3_RIGHT" action="CM_IncrProgram" />
+		
+		<!--
+			Root shifted submode
+			
+			Contains all common shifted assignments that aren't overriden in specific 
+			MODE_X shifted submodes.
+		-->
+		
+		<mode name="ROOT_Shift">
+			<condition type="button" id="SHIFT" />
+			
+			<button id="A" action="Rdr_BarScanChange" />
+			<button id="B" action="View_Padlock" />
+			<button id="C" action="PinkySwitch" />
+			<button id="D" action="Eject" />
+			
+			<button id="HAT1_UP" action="DMS_Up" />
+			<button id="HAT1_DOWN" action="DMS_Down" />
+			<button id="HAT1_LEFT" action="DMS_Left" />
+			<button id="HAT1_RIGHT" action="DMS_Right" />
+		
+			<axis id="HAT2_X" >
+				<band low="-1" high="-1" action="View_Friendly" />
+				<band low="1" high="1" action="View_Enemy" />
+			</axis>
+			<axis id="HAT2_Y" >
+				<band low="-1" high="-1" action="View_External" />
+				<band low="1" high="1" action="View_GlanceFwd" />
+			</axis>
+			
+			<button id="MOUSE_UP" action="Rdr_IncrRange" />
+			<button id="MOUSE_DOWN" action="Rdr_DecrRange" />
+			<button id="MOUSE_LEFT" action="HSD_IncrRange" />
+			<button id="MOUSE_RIGHT" action="HSD_DecrRange" />
+		</mode>
+		
+		
+		<!--
+			NAV master mode
+			
+			Basic navigation mode.
+		-->
+		
+		<mode name="NAV">
+			<condition type="button" id="MODE_2" />
+			
+			<button id="TRIGGER" action="WheelBrakes" />
+			<button id="FIRE" action="AP_Toggle" />
+			
+			
+			<!--
+			
+				NAV shifted submode
+				
+			-->
+			
+			<mode name="NAV_Shift">
+				<condition type="button" id="SHIFT" />
+			
+				<button id="TRIGGER" action="Gear" />
+				<button id="FIRE" action="ICP_DriftCO" />
+			</mode>
+		</mode>
+			
+		
+		<!--
+			A/A master mode
+			
+			Basic air-to-air combat mode.
+		-->
+		
+		<mode name="AA">
+			<condition type="button" id="MODE_3" />
+			
+			<button id="TRIGGER" action="Trigger" />
+			<button id="FIRE" action="Wpn_Release" />
+			
+			
+			<!--
+			
+				A/A shifted submode
+				
+			-->
+			
+			<mode name="AA_Shift">
+				<condition type="button" id="SHIFT" />
+			
+				<button id="TRIGGER" action="Msl_Uncage" />
+				<button id="FIRE" action="Wpn_NextAA" />
+				
+				<axis id="HAT2_Y" >
+					<band low="-1" high="-1" action="View_Weapon" />
+					<band low="1" high="1" action="View_GlanceFwd" />
+				</axis>
+			</mode>
+		</mode>
+
+
+		<!--
+			A/G master mode
+			
+			Basic air-to-ground combat mode.
+		-->
+		
+		<mode name="AG">
+			<condition type="button" id="MODE_1" />
+			
+			<button id="TRIGGER" action="Trigger_1stDet" />
+			<button id="FIRE" action="Wpn_Release" />
+			
+			
+			<!--
+			
+				A/G shifted submode
+				
+			-->
+			
+			<mode name="AG_Shift">
+				<condition type="button" id="SHIFT" />
+			
+				<button id="TRIGGER" action="Msl_Uncage" />
+				<button id="FIRE" action="Wpn_NextAG" />
+				
+				<axis id="HAT2_Y" >
+					<band low="-1" high="-1" action="View_Weapon" />
+					<band low="1" high="1" action="View_GlanceFwd" />
+				</axis>
+			</mode>
+		</mode>
+	</mode>
+	
+</profile>
